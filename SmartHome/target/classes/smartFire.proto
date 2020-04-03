@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.smartfire.smarthome";
+
+
+service SmartFire {
+    rpc switchOn(SwitchStatus) returns (SwitchStatus) {}
+    rpc switchOff(SwitchStatus) returns (SwitchStatus) {}
+    rpc fireOn(FireStatus) returns (FireStatus) {}
+    rpc fireOff(FireStatus) returns (FireStatus) {}
+    rpc temprature(TempratureRequest) returns (stream TempratureResponse) {}
+}
+
+message SwitchStatus{
+  bool switchOnOff= 1;
+}
+
+message FireStatus{
+  bool lightsOnOff= 2;
+}
+
+message TempratureRequest{
+  int32 temprature= 3;
+}
+
+message TempratureResponse{
+  int32 temprature= 3;
+}
