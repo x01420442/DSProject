@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.smartlight.smarthome";
+
+
+service SmartDoor {
+    rpc switchOn(SwitchStatus) returns (SwitchStatus) {}
+    rpc switchOff(SwitchStatus) returns (SwitchStatus) {}
+    rpc lightsOn(LightsStatus) returns (LightsStatus) {}
+    rpc lightsOff(LightsStatus) returns (LightsStatus) {}
+    rpc intensity(IntensityRequest) returns (stream IntensityResponse) {}
+}
+
+message SwitchStatus{
+  bool switchOnOff= 1;
+}
+
+message LightsStatus{
+  bool lightsOnOff= 2;
+}
+
+message IntensityRequest{
+  int32 intensity= 3;
+}
+
+message IntensityResponse{
+  int32 intensity= 3;
+}
