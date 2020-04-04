@@ -44,17 +44,18 @@ public final class SmartFireOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017smartFire.proto\"#\n\014SwitchStatus\022\023\n\013swi" +
-      "tchOnOff\030\001 \001(\010\"!\n\nFireStatus\022\023\n\013lightsOn" +
-      "Off\030\002 \001(\010\"\'\n\021TempratureRequest\022\022\n\ntempra" +
-      "ture\030\003 \001(\005\"(\n\022TempratureResponse\022\022\n\ntemp" +
-      "rature\030\003 \001(\0052\354\001\n\tSmartFire\022*\n\010switchOn\022\r" +
-      ".SwitchStatus\032\r.SwitchStatus\"\000\022+\n\tswitch" +
-      "Off\022\r.SwitchStatus\032\r.SwitchStatus\"\000\022$\n\006f" +
-      "ireOn\022\013.FireStatus\032\013.FireStatus\"\000\022%\n\007fir" +
-      "eOff\022\013.FireStatus\032\013.FireStatus\"\000\0229\n\ntemp" +
-      "rature\022\022.TempratureRequest\032\023.TempratureR" +
-      "esponse\"\0000\001B\033\n\027com.smartfire.smarthomeP\001" +
-      "b\006proto3"
+      "tchOnOff\030\001 \001(\010\"4\n\nFireStatus\022\023\n\013lightsOn" +
+      "Off\030\002 \001(\010\022\021\n\tstatusMsg\030\003 \001(\t\":\n\021Tempratu" +
+      "reRequest\022\022\n\ntemprature\030\004 \001(\005\022\021\n\tstatusM" +
+      "sg\030\005 \001(\t\";\n\022TempratureResponse\022\022\n\ntempra" +
+      "ture\030\006 \001(\005\022\021\n\tstatusMsg\030\007 \001(\t2\354\001\n\tSmartF" +
+      "ire\022*\n\010switchOn\022\r.SwitchStatus\032\r.SwitchS" +
+      "tatus\"\000\022+\n\tswitchOff\022\r.SwitchStatus\032\r.Sw" +
+      "itchStatus\"\000\022$\n\006fireOn\022\013.FireStatus\032\013.Fi" +
+      "reStatus\"\000\022%\n\007fireOff\022\013.FireStatus\032\013.Fir" +
+      "eStatus\"\000\0229\n\ntemprature\022\022.TempratureRequ" +
+      "est\032\023.TempratureResponse\"\0000\001B\033\n\027com.smar" +
+      "tfire.smarthomeP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -79,19 +80,19 @@ public final class SmartFireOuterClass {
     internal_static_FireStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FireStatus_descriptor,
-        new java.lang.String[] { "LightsOnOff", });
+        new java.lang.String[] { "LightsOnOff", "StatusMsg", });
     internal_static_TempratureRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_TempratureRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TempratureRequest_descriptor,
-        new java.lang.String[] { "Temprature", });
+        new java.lang.String[] { "Temprature", "StatusMsg", });
     internal_static_TempratureResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_TempratureResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TempratureResponse_descriptor,
-        new java.lang.String[] { "Temprature", });
+        new java.lang.String[] { "Temprature", "StatusMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

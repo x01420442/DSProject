@@ -15,7 +15,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$USER_HOME$/eclipse-workspace/smart-chef-master" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -43,5 +43,9 @@
       <screen x="0" y="0" width="2715" height="1487" />
     </state>
     <state x="1632" y="444" key="#Project_Structure/0.0.2715.1487@0.0.2715.1487" timestamp="1585945683996" />
+    <state x="1852" y="519" key="FileChooserDialogImpl" timestamp="1585951404739">
+      <screen x="0" y="0" width="2715" height="1487" />
+    </state>
+    <state x="1852" y="519" key="FileChooserDialogImpl/0.0.2715.1487@0.0.2715.1487" timestamp="1585951404739" />
   </component>
 </project>

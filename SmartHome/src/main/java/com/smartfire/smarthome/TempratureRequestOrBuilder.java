@@ -8,7 +8,17 @@ public interface TempratureRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 temprature = 3;</code>
+   * <code>int32 temprature = 4;</code>
    */
   int getTemprature();
+
+  /**
+   * <code>string statusMsg = 5;</code>
+   */
+  java.lang.String getStatusMsg();
+  /**
+   * <code>string statusMsg = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getStatusMsgBytes();
 }

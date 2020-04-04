@@ -8,7 +8,17 @@ public interface LockStatusOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool lockOnOff = 3;</code>
+   * <code>bool lockOnOff = 4;</code>
    */
   boolean getLockOnOff();
+
+  /**
+   * <code>string statusMsg = 5;</code>
+   */
+  java.lang.String getStatusMsg();
+  /**
+   * <code>string statusMsg = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getStatusMsgBytes();
 }

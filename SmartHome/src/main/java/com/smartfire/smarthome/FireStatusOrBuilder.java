@@ -11,4 +11,14 @@ public interface FireStatusOrBuilder extends
    * <code>bool lightsOnOff = 2;</code>
    */
   boolean getLightsOnOff();
+
+  /**
+   * <code>string statusMsg = 3;</code>
+   */
+  java.lang.String getStatusMsg();
+  /**
+   * <code>string statusMsg = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getStatusMsgBytes();
 }

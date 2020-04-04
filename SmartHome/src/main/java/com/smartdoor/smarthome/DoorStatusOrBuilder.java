@@ -11,4 +11,14 @@ public interface DoorStatusOrBuilder extends
    * <code>bool openOnOff = 2;</code>
    */
   boolean getOpenOnOff();
+
+  /**
+   * <code>string statusMsg = 3;</code>
+   */
+  java.lang.String getStatusMsg();
+  /**
+   * <code>string statusMsg = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getStatusMsgBytes();
 }

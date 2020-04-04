@@ -18,12 +18,15 @@ message SwitchStatus{
 
 message FireStatus{
   bool lightsOnOff= 2;
+  string statusMsg = 3;
 }
 
 message TempratureRequest{
-  int32 temprature= 3;
+  int32 temprature= 4;
+  string statusMsg = 5;
 }
 
 message TempratureResponse{
-  int32 temprature= 3;
+  int32 temprature= 6;
+  string statusMsg = 7;
 }

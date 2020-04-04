@@ -19,8 +19,10 @@ message SwitchStatus{
 
 message DoorStatus{
   bool openOnOff= 2;
+  string statusMsg = 3;
 }
 
 message LockStatus{
-  bool lockOnOff= 3;
+  bool lockOnOff= 4;
+  string statusMsg = 5;
 }
