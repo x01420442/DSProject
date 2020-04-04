@@ -3,21 +3,21 @@
 
 package com.smartlight.smarthome;
 
-public interface LightsStatusOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:LightsStatus)
+public interface IntensitySettingOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:IntensitySetting)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool lightsOnOff = 2;</code>
+   * <code>int32 intensity = 4;</code>
    */
-  boolean getLightsOnOff();
+  int getIntensity();
 
   /**
-   * <code>string statusMsg = 3;</code>
+   * <code>string statusMsg = 5;</code>
    */
   java.lang.String getStatusMsg();
   /**
-   * <code>string statusMsg = 3;</code>
+   * <code>string statusMsg = 5;</code>
    */
   com.google.protobuf.ByteString
       getStatusMsgBytes();

@@ -4,19 +4,20 @@
 package com.smartlight.smarthome;
 
 /**
- * Protobuf type {@code SwitchStatus}
+ * Protobuf type {@code IntensitySetting}
  */
-public  final class SwitchStatus extends
+public  final class IntensitySetting extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:SwitchStatus)
-    SwitchStatusOrBuilder {
+    // @@protoc_insertion_point(message_implements:IntensitySetting)
+    IntensitySettingOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use SwitchStatus.newBuilder() to construct.
-  private SwitchStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use IntensitySetting.newBuilder() to construct.
+  private IntensitySetting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SwitchStatus() {
-    switchOnOff_ = false;
+  private IntensitySetting() {
+    intensity_ = 0;
+    statusMsg_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +25,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private SwitchStatus(
+  private IntensitySetting(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -43,9 +44,15 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 32: {
 
-            switchOnOff_ = input.readBool();
+            intensity_ = input.readInt32();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            statusMsg_ = s;
             break;
           }
           default: {
@@ -69,24 +76,58 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.smartlight.smarthome.SmartLightOuterClass.internal_static_SwitchStatus_descriptor;
+    return com.smartlight.smarthome.SmartLightOuterClass.internal_static_IntensitySetting_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.smartlight.smarthome.SmartLightOuterClass.internal_static_SwitchStatus_fieldAccessorTable
+    return com.smartlight.smarthome.SmartLightOuterClass.internal_static_IntensitySetting_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.smartlight.smarthome.SwitchStatus.class, com.smartlight.smarthome.SwitchStatus.Builder.class);
+            com.smartlight.smarthome.IntensitySetting.class, com.smartlight.smarthome.IntensitySetting.Builder.class);
   }
 
-  public static final int SWITCHONOFF_FIELD_NUMBER = 1;
-  private boolean switchOnOff_;
+  public static final int INTENSITY_FIELD_NUMBER = 4;
+  private int intensity_;
   /**
-   * <code>bool switchOnOff = 1;</code>
+   * <code>int32 intensity = 4;</code>
    */
-  public boolean getSwitchOnOff() {
-    return switchOnOff_;
+  public int getIntensity() {
+    return intensity_;
+  }
+
+  public static final int STATUSMSG_FIELD_NUMBER = 5;
+  private volatile java.lang.Object statusMsg_;
+  /**
+   * <code>string statusMsg = 5;</code>
+   */
+  public java.lang.String getStatusMsg() {
+    java.lang.Object ref = statusMsg_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      statusMsg_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string statusMsg = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getStatusMsgBytes() {
+    java.lang.Object ref = statusMsg_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      statusMsg_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -103,8 +144,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (switchOnOff_ != false) {
-      output.writeBool(1, switchOnOff_);
+    if (intensity_ != 0) {
+      output.writeInt32(4, intensity_);
+    }
+    if (!getStatusMsgBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, statusMsg_);
     }
     unknownFields.writeTo(output);
   }
@@ -115,9 +159,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (switchOnOff_ != false) {
+    if (intensity_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, switchOnOff_);
+        .computeInt32Size(4, intensity_);
+    }
+    if (!getStatusMsgBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, statusMsg_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -129,14 +176,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.smartlight.smarthome.SwitchStatus)) {
+    if (!(obj instanceof com.smartlight.smarthome.IntensitySetting)) {
       return super.equals(obj);
     }
-    com.smartlight.smarthome.SwitchStatus other = (com.smartlight.smarthome.SwitchStatus) obj;
+    com.smartlight.smarthome.IntensitySetting other = (com.smartlight.smarthome.IntensitySetting) obj;
 
     boolean result = true;
-    result = result && (getSwitchOnOff()
-        == other.getSwitchOnOff());
+    result = result && (getIntensity()
+        == other.getIntensity());
+    result = result && getStatusMsg()
+        .equals(other.getStatusMsg());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -148,77 +197,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SWITCHONOFF_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getSwitchOnOff());
+    hash = (37 * hash) + INTENSITY_FIELD_NUMBER;
+    hash = (53 * hash) + getIntensity();
+    hash = (37 * hash) + STATUSMSG_FIELD_NUMBER;
+    hash = (53 * hash) + getStatusMsg().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(byte[] data)
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(java.io.InputStream input)
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseDelimitedFrom(java.io.InputStream input)
+  public static com.smartlight.smarthome.IntensitySetting parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseDelimitedFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.smartlight.smarthome.SwitchStatus parseFrom(
+  public static com.smartlight.smarthome.IntensitySetting parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -231,7 +281,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.smartlight.smarthome.SwitchStatus prototype) {
+  public static Builder newBuilder(com.smartlight.smarthome.IntensitySetting prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -247,26 +297,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code SwitchStatus}
+   * Protobuf type {@code IntensitySetting}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:SwitchStatus)
-      com.smartlight.smarthome.SwitchStatusOrBuilder {
+      // @@protoc_insertion_point(builder_implements:IntensitySetting)
+      com.smartlight.smarthome.IntensitySettingOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.smartlight.smarthome.SmartLightOuterClass.internal_static_SwitchStatus_descriptor;
+      return com.smartlight.smarthome.SmartLightOuterClass.internal_static_IntensitySetting_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.smartlight.smarthome.SmartLightOuterClass.internal_static_SwitchStatus_fieldAccessorTable
+      return com.smartlight.smarthome.SmartLightOuterClass.internal_static_IntensitySetting_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.smartlight.smarthome.SwitchStatus.class, com.smartlight.smarthome.SwitchStatus.Builder.class);
+              com.smartlight.smarthome.IntensitySetting.class, com.smartlight.smarthome.IntensitySetting.Builder.class);
     }
 
-    // Construct using com.smartlight.smarthome.SwitchStatus.newBuilder()
+    // Construct using com.smartlight.smarthome.IntensitySetting.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -284,7 +334,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      switchOnOff_ = false;
+      intensity_ = 0;
+
+      statusMsg_ = "";
 
       return this;
     }
@@ -292,17 +344,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.smartlight.smarthome.SmartLightOuterClass.internal_static_SwitchStatus_descriptor;
+      return com.smartlight.smarthome.SmartLightOuterClass.internal_static_IntensitySetting_descriptor;
     }
 
     @java.lang.Override
-    public com.smartlight.smarthome.SwitchStatus getDefaultInstanceForType() {
-      return com.smartlight.smarthome.SwitchStatus.getDefaultInstance();
+    public com.smartlight.smarthome.IntensitySetting getDefaultInstanceForType() {
+      return com.smartlight.smarthome.IntensitySetting.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.smartlight.smarthome.SwitchStatus build() {
-      com.smartlight.smarthome.SwitchStatus result = buildPartial();
+    public com.smartlight.smarthome.IntensitySetting build() {
+      com.smartlight.smarthome.IntensitySetting result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -310,9 +362,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.smartlight.smarthome.SwitchStatus buildPartial() {
-      com.smartlight.smarthome.SwitchStatus result = new com.smartlight.smarthome.SwitchStatus(this);
-      result.switchOnOff_ = switchOnOff_;
+    public com.smartlight.smarthome.IntensitySetting buildPartial() {
+      com.smartlight.smarthome.IntensitySetting result = new com.smartlight.smarthome.IntensitySetting(this);
+      result.intensity_ = intensity_;
+      result.statusMsg_ = statusMsg_;
       onBuilt();
       return result;
     }
@@ -351,18 +404,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.smartlight.smarthome.SwitchStatus) {
-        return mergeFrom((com.smartlight.smarthome.SwitchStatus)other);
+      if (other instanceof com.smartlight.smarthome.IntensitySetting) {
+        return mergeFrom((com.smartlight.smarthome.IntensitySetting)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.smartlight.smarthome.SwitchStatus other) {
-      if (other == com.smartlight.smarthome.SwitchStatus.getDefaultInstance()) return this;
-      if (other.getSwitchOnOff() != false) {
-        setSwitchOnOff(other.getSwitchOnOff());
+    public Builder mergeFrom(com.smartlight.smarthome.IntensitySetting other) {
+      if (other == com.smartlight.smarthome.IntensitySetting.getDefaultInstance()) return this;
+      if (other.getIntensity() != 0) {
+        setIntensity(other.getIntensity());
+      }
+      if (!other.getStatusMsg().isEmpty()) {
+        statusMsg_ = other.statusMsg_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -379,11 +436,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.smartlight.smarthome.SwitchStatus parsedMessage = null;
+      com.smartlight.smarthome.IntensitySetting parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.smartlight.smarthome.SwitchStatus) e.getUnfinishedMessage();
+        parsedMessage = (com.smartlight.smarthome.IntensitySetting) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -393,28 +450,97 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean switchOnOff_ ;
+    private int intensity_ ;
     /**
-     * <code>bool switchOnOff = 1;</code>
+     * <code>int32 intensity = 4;</code>
      */
-    public boolean getSwitchOnOff() {
-      return switchOnOff_;
+    public int getIntensity() {
+      return intensity_;
     }
     /**
-     * <code>bool switchOnOff = 1;</code>
+     * <code>int32 intensity = 4;</code>
      */
-    public Builder setSwitchOnOff(boolean value) {
+    public Builder setIntensity(int value) {
       
-      switchOnOff_ = value;
+      intensity_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool switchOnOff = 1;</code>
+     * <code>int32 intensity = 4;</code>
      */
-    public Builder clearSwitchOnOff() {
+    public Builder clearIntensity() {
       
-      switchOnOff_ = false;
+      intensity_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object statusMsg_ = "";
+    /**
+     * <code>string statusMsg = 5;</code>
+     */
+    public java.lang.String getStatusMsg() {
+      java.lang.Object ref = statusMsg_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusMsg_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string statusMsg = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStatusMsgBytes() {
+      java.lang.Object ref = statusMsg_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string statusMsg = 5;</code>
+     */
+    public Builder setStatusMsg(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      statusMsg_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string statusMsg = 5;</code>
+     */
+    public Builder clearStatusMsg() {
+      
+      statusMsg_ = getDefaultInstance().getStatusMsg();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string statusMsg = 5;</code>
+     */
+    public Builder setStatusMsgBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      statusMsg_ = value;
       onChanged();
       return this;
     }
@@ -431,41 +557,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:SwitchStatus)
+    // @@protoc_insertion_point(builder_scope:IntensitySetting)
   }
 
-  // @@protoc_insertion_point(class_scope:SwitchStatus)
-  private static final com.smartlight.smarthome.SwitchStatus DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:IntensitySetting)
+  private static final com.smartlight.smarthome.IntensitySetting DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.smartlight.smarthome.SwitchStatus();
+    DEFAULT_INSTANCE = new com.smartlight.smarthome.IntensitySetting();
   }
 
-  public static com.smartlight.smarthome.SwitchStatus getDefaultInstance() {
+  public static com.smartlight.smarthome.IntensitySetting getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SwitchStatus>
-      PARSER = new com.google.protobuf.AbstractParser<SwitchStatus>() {
+  private static final com.google.protobuf.Parser<IntensitySetting>
+      PARSER = new com.google.protobuf.AbstractParser<IntensitySetting>() {
     @java.lang.Override
-    public SwitchStatus parsePartialFrom(
+    public IntensitySetting parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SwitchStatus(input, extensionRegistry);
+      return new IntensitySetting(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<SwitchStatus> parser() {
+  public static com.google.protobuf.Parser<IntensitySetting> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SwitchStatus> getParserForType() {
+  public com.google.protobuf.Parser<IntensitySetting> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.smartlight.smarthome.SwitchStatus getDefaultInstanceForType() {
+  public com.smartlight.smarthome.IntensitySetting getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

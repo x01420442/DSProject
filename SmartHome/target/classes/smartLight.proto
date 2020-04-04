@@ -4,26 +4,25 @@ option java_multiple_files = true;
 option java_package = "com.smartlight.smarthome";
 
 
-service SmartDoor {
+service SmartLight {
     rpc switchOn(SwitchStatus) returns (SwitchStatus) {}
     rpc switchOff(SwitchStatus) returns (SwitchStatus) {}
     rpc lightsOn(LightsStatus) returns (LightsStatus) {}
     rpc lightsOff(LightsStatus) returns (LightsStatus) {}
-    rpc intensity(IntensityRequest) returns (stream IntensityResponse) {}
+    rpc brightintensity(IntensitySetting) returns (stream IntensitySetting) {}
+    rpc dimintensity(IntensitySetting) returns (stream IntensitySetting) {}
 }
 
 message SwitchStatus{
-  bool switchOnOff= 1;
+  bool switchOnOff = 1;
 }
 
 message LightsStatus{
-  bool lightsOnOff= 2;
+  bool lightsOnOff = 2;
+  string statusMsg = 3;
 }
 
-message IntensityRequest{
-  int32 intensity= 3;
-}
-
-message IntensityResponse{
-  int32 intensity= 3;
+message IntensitySetting{
+  int32 intensity = 4;
+  string statusMsg = 5;
 }
