@@ -9,7 +9,8 @@ service SmartFire {
     rpc switchOff(SwitchStatus) returns (SwitchStatus) {}
     rpc fireOn(FireStatus) returns (FireStatus) {}
     rpc fireOff(FireStatus) returns (FireStatus) {}
-    rpc temprature(TempratureRequest) returns (stream TempratureResponse) {}
+    rpc makeHot(TempratureSetting) returns (stream TempratureSetting) {}
+    rpc makeCold(TempratureSetting) returns (stream TempratureSetting) {}
 }
 
 message SwitchStatus{
@@ -17,16 +18,12 @@ message SwitchStatus{
 }
 
 message FireStatus{
-  bool lightsOnOff= 2;
+  bool fireOnOff= 2;
   string statusMsg = 3;
 }
 
-message TempratureRequest{
+message TempratureSetting{
   int32 temprature= 4;
   string statusMsg = 5;
 }
 
-message TempratureResponse{
-  int32 temprature= 6;
-  string statusMsg = 7;
-}

@@ -4,19 +4,19 @@
 package com.smartfire.smarthome;
 
 /**
- * Protobuf type {@code FireStatus}
+ * Protobuf type {@code TempratureSetting}
  */
-public  final class FireStatus extends
+public  final class TempratureSetting extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:FireStatus)
-    FireStatusOrBuilder {
+    // @@protoc_insertion_point(message_implements:TempratureSetting)
+    TempratureSettingOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use FireStatus.newBuilder() to construct.
-  private FireStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use TempratureSetting.newBuilder() to construct.
+  private TempratureSetting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private FireStatus() {
-    fireOnOff_ = false;
+  private TempratureSetting() {
+    temprature_ = 0;
     statusMsg_ = "";
   }
 
@@ -25,7 +25,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private FireStatus(
+  private TempratureSetting(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -44,12 +44,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 16: {
+          case 32: {
 
-            fireOnOff_ = input.readBool();
+            temprature_ = input.readInt32();
             break;
           }
-          case 26: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             statusMsg_ = s;
@@ -76,30 +76,30 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.smartfire.smarthome.SmartFireOuterClass.internal_static_FireStatus_descriptor;
+    return com.smartfire.smarthome.SmartFireOuterClass.internal_static_TempratureSetting_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.smartfire.smarthome.SmartFireOuterClass.internal_static_FireStatus_fieldAccessorTable
+    return com.smartfire.smarthome.SmartFireOuterClass.internal_static_TempratureSetting_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.smartfire.smarthome.FireStatus.class, com.smartfire.smarthome.FireStatus.Builder.class);
+            com.smartfire.smarthome.TempratureSetting.class, com.smartfire.smarthome.TempratureSetting.Builder.class);
   }
 
-  public static final int FIREONOFF_FIELD_NUMBER = 2;
-  private boolean fireOnOff_;
+  public static final int TEMPRATURE_FIELD_NUMBER = 4;
+  private int temprature_;
   /**
-   * <code>bool fireOnOff = 2;</code>
+   * <code>int32 temprature = 4;</code>
    */
-  public boolean getFireOnOff() {
-    return fireOnOff_;
+  public int getTemprature() {
+    return temprature_;
   }
 
-  public static final int STATUSMSG_FIELD_NUMBER = 3;
+  public static final int STATUSMSG_FIELD_NUMBER = 5;
   private volatile java.lang.Object statusMsg_;
   /**
-   * <code>string statusMsg = 3;</code>
+   * <code>string statusMsg = 5;</code>
    */
   public java.lang.String getStatusMsg() {
     java.lang.Object ref = statusMsg_;
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string statusMsg = 3;</code>
+   * <code>string statusMsg = 5;</code>
    */
   public com.google.protobuf.ByteString
       getStatusMsgBytes() {
@@ -144,11 +144,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (fireOnOff_ != false) {
-      output.writeBool(2, fireOnOff_);
+    if (temprature_ != 0) {
+      output.writeInt32(4, temprature_);
     }
     if (!getStatusMsgBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, statusMsg_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, statusMsg_);
     }
     unknownFields.writeTo(output);
   }
@@ -159,12 +159,12 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (fireOnOff_ != false) {
+    if (temprature_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, fireOnOff_);
+        .computeInt32Size(4, temprature_);
     }
     if (!getStatusMsgBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, statusMsg_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, statusMsg_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -176,14 +176,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.smartfire.smarthome.FireStatus)) {
+    if (!(obj instanceof com.smartfire.smarthome.TempratureSetting)) {
       return super.equals(obj);
     }
-    com.smartfire.smarthome.FireStatus other = (com.smartfire.smarthome.FireStatus) obj;
+    com.smartfire.smarthome.TempratureSetting other = (com.smartfire.smarthome.TempratureSetting) obj;
 
     boolean result = true;
-    result = result && (getFireOnOff()
-        == other.getFireOnOff());
+    result = result && (getTemprature()
+        == other.getTemprature());
     result = result && getStatusMsg()
         .equals(other.getStatusMsg());
     result = result && unknownFields.equals(other.unknownFields);
@@ -197,9 +197,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FIREONOFF_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getFireOnOff());
+    hash = (37 * hash) + TEMPRATURE_FIELD_NUMBER;
+    hash = (53 * hash) + getTemprature();
     hash = (37 * hash) + STATUSMSG_FIELD_NUMBER;
     hash = (53 * hash) + getStatusMsg().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -207,69 +206,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.smartfire.smarthome.FireStatus parseFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(byte[] data)
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(java.io.InputStream input)
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.smartfire.smarthome.FireStatus parseDelimitedFrom(java.io.InputStream input)
+  public static com.smartfire.smarthome.TempratureSetting parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.smartfire.smarthome.FireStatus parseDelimitedFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.smartfire.smarthome.FireStatus parseFrom(
+  public static com.smartfire.smarthome.TempratureSetting parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -282,7 +281,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.smartfire.smarthome.FireStatus prototype) {
+  public static Builder newBuilder(com.smartfire.smarthome.TempratureSetting prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -298,26 +297,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code FireStatus}
+   * Protobuf type {@code TempratureSetting}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:FireStatus)
-      com.smartfire.smarthome.FireStatusOrBuilder {
+      // @@protoc_insertion_point(builder_implements:TempratureSetting)
+      com.smartfire.smarthome.TempratureSettingOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.smartfire.smarthome.SmartFireOuterClass.internal_static_FireStatus_descriptor;
+      return com.smartfire.smarthome.SmartFireOuterClass.internal_static_TempratureSetting_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.smartfire.smarthome.SmartFireOuterClass.internal_static_FireStatus_fieldAccessorTable
+      return com.smartfire.smarthome.SmartFireOuterClass.internal_static_TempratureSetting_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.smartfire.smarthome.FireStatus.class, com.smartfire.smarthome.FireStatus.Builder.class);
+              com.smartfire.smarthome.TempratureSetting.class, com.smartfire.smarthome.TempratureSetting.Builder.class);
     }
 
-    // Construct using com.smartfire.smarthome.FireStatus.newBuilder()
+    // Construct using com.smartfire.smarthome.TempratureSetting.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -335,7 +334,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      fireOnOff_ = false;
+      temprature_ = 0;
 
       statusMsg_ = "";
 
@@ -345,17 +344,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.smartfire.smarthome.SmartFireOuterClass.internal_static_FireStatus_descriptor;
+      return com.smartfire.smarthome.SmartFireOuterClass.internal_static_TempratureSetting_descriptor;
     }
 
     @java.lang.Override
-    public com.smartfire.smarthome.FireStatus getDefaultInstanceForType() {
-      return com.smartfire.smarthome.FireStatus.getDefaultInstance();
+    public com.smartfire.smarthome.TempratureSetting getDefaultInstanceForType() {
+      return com.smartfire.smarthome.TempratureSetting.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.smartfire.smarthome.FireStatus build() {
-      com.smartfire.smarthome.FireStatus result = buildPartial();
+    public com.smartfire.smarthome.TempratureSetting build() {
+      com.smartfire.smarthome.TempratureSetting result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -363,9 +362,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.smartfire.smarthome.FireStatus buildPartial() {
-      com.smartfire.smarthome.FireStatus result = new com.smartfire.smarthome.FireStatus(this);
-      result.fireOnOff_ = fireOnOff_;
+    public com.smartfire.smarthome.TempratureSetting buildPartial() {
+      com.smartfire.smarthome.TempratureSetting result = new com.smartfire.smarthome.TempratureSetting(this);
+      result.temprature_ = temprature_;
       result.statusMsg_ = statusMsg_;
       onBuilt();
       return result;
@@ -405,18 +404,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.smartfire.smarthome.FireStatus) {
-        return mergeFrom((com.smartfire.smarthome.FireStatus)other);
+      if (other instanceof com.smartfire.smarthome.TempratureSetting) {
+        return mergeFrom((com.smartfire.smarthome.TempratureSetting)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.smartfire.smarthome.FireStatus other) {
-      if (other == com.smartfire.smarthome.FireStatus.getDefaultInstance()) return this;
-      if (other.getFireOnOff() != false) {
-        setFireOnOff(other.getFireOnOff());
+    public Builder mergeFrom(com.smartfire.smarthome.TempratureSetting other) {
+      if (other == com.smartfire.smarthome.TempratureSetting.getDefaultInstance()) return this;
+      if (other.getTemprature() != 0) {
+        setTemprature(other.getTemprature());
       }
       if (!other.getStatusMsg().isEmpty()) {
         statusMsg_ = other.statusMsg_;
@@ -437,11 +436,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.smartfire.smarthome.FireStatus parsedMessage = null;
+      com.smartfire.smarthome.TempratureSetting parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.smartfire.smarthome.FireStatus) e.getUnfinishedMessage();
+        parsedMessage = (com.smartfire.smarthome.TempratureSetting) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -451,35 +450,35 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean fireOnOff_ ;
+    private int temprature_ ;
     /**
-     * <code>bool fireOnOff = 2;</code>
+     * <code>int32 temprature = 4;</code>
      */
-    public boolean getFireOnOff() {
-      return fireOnOff_;
+    public int getTemprature() {
+      return temprature_;
     }
     /**
-     * <code>bool fireOnOff = 2;</code>
+     * <code>int32 temprature = 4;</code>
      */
-    public Builder setFireOnOff(boolean value) {
+    public Builder setTemprature(int value) {
       
-      fireOnOff_ = value;
+      temprature_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool fireOnOff = 2;</code>
+     * <code>int32 temprature = 4;</code>
      */
-    public Builder clearFireOnOff() {
+    public Builder clearTemprature() {
       
-      fireOnOff_ = false;
+      temprature_ = 0;
       onChanged();
       return this;
     }
 
     private java.lang.Object statusMsg_ = "";
     /**
-     * <code>string statusMsg = 3;</code>
+     * <code>string statusMsg = 5;</code>
      */
     public java.lang.String getStatusMsg() {
       java.lang.Object ref = statusMsg_;
@@ -494,7 +493,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string statusMsg = 3;</code>
+     * <code>string statusMsg = 5;</code>
      */
     public com.google.protobuf.ByteString
         getStatusMsgBytes() {
@@ -510,7 +509,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string statusMsg = 3;</code>
+     * <code>string statusMsg = 5;</code>
      */
     public Builder setStatusMsg(
         java.lang.String value) {
@@ -523,7 +522,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string statusMsg = 3;</code>
+     * <code>string statusMsg = 5;</code>
      */
     public Builder clearStatusMsg() {
       
@@ -532,7 +531,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string statusMsg = 3;</code>
+     * <code>string statusMsg = 5;</code>
      */
     public Builder setStatusMsgBytes(
         com.google.protobuf.ByteString value) {
@@ -558,41 +557,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:FireStatus)
+    // @@protoc_insertion_point(builder_scope:TempratureSetting)
   }
 
-  // @@protoc_insertion_point(class_scope:FireStatus)
-  private static final com.smartfire.smarthome.FireStatus DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:TempratureSetting)
+  private static final com.smartfire.smarthome.TempratureSetting DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.smartfire.smarthome.FireStatus();
+    DEFAULT_INSTANCE = new com.smartfire.smarthome.TempratureSetting();
   }
 
-  public static com.smartfire.smarthome.FireStatus getDefaultInstance() {
+  public static com.smartfire.smarthome.TempratureSetting getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FireStatus>
-      PARSER = new com.google.protobuf.AbstractParser<FireStatus>() {
+  private static final com.google.protobuf.Parser<TempratureSetting>
+      PARSER = new com.google.protobuf.AbstractParser<TempratureSetting>() {
     @java.lang.Override
-    public FireStatus parsePartialFrom(
+    public TempratureSetting parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FireStatus(input, extensionRegistry);
+      return new TempratureSetting(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<FireStatus> parser() {
+  public static com.google.protobuf.Parser<TempratureSetting> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FireStatus> getParserForType() {
+  public com.google.protobuf.Parser<TempratureSetting> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.smartfire.smarthome.FireStatus getDefaultInstanceForType() {
+  public com.smartfire.smarthome.TempratureSetting getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

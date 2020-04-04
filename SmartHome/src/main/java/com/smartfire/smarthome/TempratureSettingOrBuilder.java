@@ -3,21 +3,21 @@
 
 package com.smartfire.smarthome;
 
-public interface FireStatusOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:FireStatus)
+public interface TempratureSettingOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:TempratureSetting)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool fireOnOff = 2;</code>
+   * <code>int32 temprature = 4;</code>
    */
-  boolean getFireOnOff();
+  int getTemprature();
 
   /**
-   * <code>string statusMsg = 3;</code>
+   * <code>string statusMsg = 5;</code>
    */
   java.lang.String getStatusMsg();
   /**
-   * <code>string statusMsg = 3;</code>
+   * <code>string statusMsg = 5;</code>
    */
   com.google.protobuf.ByteString
       getStatusMsgBytes();

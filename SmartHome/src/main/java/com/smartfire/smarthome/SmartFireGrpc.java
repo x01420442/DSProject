@@ -155,36 +155,68 @@ public final class SmartFireGrpc {
      return getFireOffMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureRequest,
-      com.smartfire.smarthome.TempratureResponse> getTempratureMethod;
+  private static volatile io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureSetting,
+      com.smartfire.smarthome.TempratureSetting> getMakeHotMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "temprature",
-      requestType = com.smartfire.smarthome.TempratureRequest.class,
-      responseType = com.smartfire.smarthome.TempratureResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "makeHot",
+      requestType = com.smartfire.smarthome.TempratureSetting.class,
+      responseType = com.smartfire.smarthome.TempratureSetting.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureRequest,
-      com.smartfire.smarthome.TempratureResponse> getTempratureMethod() {
-    io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureRequest, com.smartfire.smarthome.TempratureResponse> getTempratureMethod;
-    if ((getTempratureMethod = SmartFireGrpc.getTempratureMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureSetting,
+      com.smartfire.smarthome.TempratureSetting> getMakeHotMethod() {
+    io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureSetting, com.smartfire.smarthome.TempratureSetting> getMakeHotMethod;
+    if ((getMakeHotMethod = SmartFireGrpc.getMakeHotMethod) == null) {
       synchronized (SmartFireGrpc.class) {
-        if ((getTempratureMethod = SmartFireGrpc.getTempratureMethod) == null) {
-          SmartFireGrpc.getTempratureMethod = getTempratureMethod = 
-              io.grpc.MethodDescriptor.<com.smartfire.smarthome.TempratureRequest, com.smartfire.smarthome.TempratureResponse>newBuilder()
+        if ((getMakeHotMethod = SmartFireGrpc.getMakeHotMethod) == null) {
+          SmartFireGrpc.getMakeHotMethod = getMakeHotMethod = 
+              io.grpc.MethodDescriptor.<com.smartfire.smarthome.TempratureSetting, com.smartfire.smarthome.TempratureSetting>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "SmartFire", "temprature"))
+                  "SmartFire", "makeHot"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartfire.smarthome.TempratureRequest.getDefaultInstance()))
+                  com.smartfire.smarthome.TempratureSetting.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartfire.smarthome.TempratureResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartFireMethodDescriptorSupplier("temprature"))
+                  com.smartfire.smarthome.TempratureSetting.getDefaultInstance()))
+                  .setSchemaDescriptor(new SmartFireMethodDescriptorSupplier("makeHot"))
                   .build();
           }
         }
      }
-     return getTempratureMethod;
+     return getMakeHotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureSetting,
+      com.smartfire.smarthome.TempratureSetting> getMakeColdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "makeCold",
+      requestType = com.smartfire.smarthome.TempratureSetting.class,
+      responseType = com.smartfire.smarthome.TempratureSetting.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureSetting,
+      com.smartfire.smarthome.TempratureSetting> getMakeColdMethod() {
+    io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureSetting, com.smartfire.smarthome.TempratureSetting> getMakeColdMethod;
+    if ((getMakeColdMethod = SmartFireGrpc.getMakeColdMethod) == null) {
+      synchronized (SmartFireGrpc.class) {
+        if ((getMakeColdMethod = SmartFireGrpc.getMakeColdMethod) == null) {
+          SmartFireGrpc.getMakeColdMethod = getMakeColdMethod = 
+              io.grpc.MethodDescriptor.<com.smartfire.smarthome.TempratureSetting, com.smartfire.smarthome.TempratureSetting>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "SmartFire", "makeCold"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.smartfire.smarthome.TempratureSetting.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.smartfire.smarthome.TempratureSetting.getDefaultInstance()))
+                  .setSchemaDescriptor(new SmartFireMethodDescriptorSupplier("makeCold"))
+                  .build();
+          }
+        }
+     }
+     return getMakeColdMethod;
   }
 
   /**
@@ -244,9 +276,16 @@ public final class SmartFireGrpc {
 
     /**
      */
-    public void temprature(com.smartfire.smarthome.TempratureRequest request,
-        io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getTempratureMethod(), responseObserver);
+    public void makeHot(com.smartfire.smarthome.TempratureSetting request,
+        io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureSetting> responseObserver) {
+      asyncUnimplementedUnaryCall(getMakeHotMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void makeCold(com.smartfire.smarthome.TempratureSetting request,
+        io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureSetting> responseObserver) {
+      asyncUnimplementedUnaryCall(getMakeColdMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -280,12 +319,19 @@ public final class SmartFireGrpc {
                 com.smartfire.smarthome.FireStatus>(
                   this, METHODID_FIRE_OFF)))
           .addMethod(
-            getTempratureMethod(),
+            getMakeHotMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                com.smartfire.smarthome.TempratureRequest,
-                com.smartfire.smarthome.TempratureResponse>(
-                  this, METHODID_TEMPRATURE)))
+                com.smartfire.smarthome.TempratureSetting,
+                com.smartfire.smarthome.TempratureSetting>(
+                  this, METHODID_MAKE_HOT)))
+          .addMethod(
+            getMakeColdMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.smartfire.smarthome.TempratureSetting,
+                com.smartfire.smarthome.TempratureSetting>(
+                  this, METHODID_MAKE_COLD)))
           .build();
     }
   }
@@ -342,10 +388,18 @@ public final class SmartFireGrpc {
 
     /**
      */
-    public void temprature(com.smartfire.smarthome.TempratureRequest request,
-        io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureResponse> responseObserver) {
+    public void makeHot(com.smartfire.smarthome.TempratureSetting request,
+        io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureSetting> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getTempratureMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getMakeHotMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void makeCold(com.smartfire.smarthome.TempratureSetting request,
+        io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureSetting> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getMakeColdMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -397,10 +451,18 @@ public final class SmartFireGrpc {
 
     /**
      */
-    public java.util.Iterator<com.smartfire.smarthome.TempratureResponse> temprature(
-        com.smartfire.smarthome.TempratureRequest request) {
+    public java.util.Iterator<com.smartfire.smarthome.TempratureSetting> makeHot(
+        com.smartfire.smarthome.TempratureSetting request) {
       return blockingServerStreamingCall(
-          getChannel(), getTempratureMethod(), getCallOptions(), request);
+          getChannel(), getMakeHotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.smartfire.smarthome.TempratureSetting> makeCold(
+        com.smartfire.smarthome.TempratureSetting request) {
+      return blockingServerStreamingCall(
+          getChannel(), getMakeColdMethod(), getCallOptions(), request);
     }
   }
 
@@ -459,7 +521,8 @@ public final class SmartFireGrpc {
   private static final int METHODID_SWITCH_OFF = 1;
   private static final int METHODID_FIRE_ON = 2;
   private static final int METHODID_FIRE_OFF = 3;
-  private static final int METHODID_TEMPRATURE = 4;
+  private static final int METHODID_MAKE_HOT = 4;
+  private static final int METHODID_MAKE_COLD = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -494,9 +557,13 @@ public final class SmartFireGrpc {
           serviceImpl.fireOff((com.smartfire.smarthome.FireStatus) request,
               (io.grpc.stub.StreamObserver<com.smartfire.smarthome.FireStatus>) responseObserver);
           break;
-        case METHODID_TEMPRATURE:
-          serviceImpl.temprature((com.smartfire.smarthome.TempratureRequest) request,
-              (io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureResponse>) responseObserver);
+        case METHODID_MAKE_HOT:
+          serviceImpl.makeHot((com.smartfire.smarthome.TempratureSetting) request,
+              (io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureSetting>) responseObserver);
+          break;
+        case METHODID_MAKE_COLD:
+          serviceImpl.makeCold((com.smartfire.smarthome.TempratureSetting) request,
+              (io.grpc.stub.StreamObserver<com.smartfire.smarthome.TempratureSetting>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -563,7 +630,8 @@ public final class SmartFireGrpc {
               .addMethod(getSwitchOffMethod())
               .addMethod(getFireOnMethod())
               .addMethod(getFireOffMethod())
-              .addMethod(getTempratureMethod())
+              .addMethod(getMakeHotMethod())
+              .addMethod(getMakeColdMethod())
               .build();
         }
       }
