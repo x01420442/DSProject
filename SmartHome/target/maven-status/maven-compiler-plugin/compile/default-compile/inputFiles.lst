@@ -1,5 +1,7 @@
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\LightsStatus.java
+C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\SmartDoorClient.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\DoorResponseOrBuilder.java
+C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartfire\smarthome\SmartFireServer.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\LockRequestOrBuilder.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartfire\smarthome\FireStatus.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\LockRequest.java
@@ -13,14 +15,19 @@ C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\DoorR
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\SmartDoorGrpc.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartfire\smarthome\SmartFireGrpc.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\SmartLightGrpc.java
+C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\SmartLightServer.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\SwitchStatusOrBuilder.java
+C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\jmdnsfiles\HTTPServer.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\LockResponseOrBuilder.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\SwitchStatus.java
+C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartfire\smarthome\SmartFireClient.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\IntensitySetting.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\LightsStatusOrBuilder.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\DoorRequestOrBuilder.java
+C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\SmartDoorServer.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\IntensitySettingOrBuilder.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\SwitchStatusOrBuilder.java
+C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartlight\smarthome\SmartLightClient.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\LockResponse.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartfire\smarthome\TempratureSettingOrBuilder.java
 C:\Users\Paul\IdeaProjects\SmartHome\src\main\java\com\smartdoor\smarthome\SwitchStatus.java
