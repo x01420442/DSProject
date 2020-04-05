@@ -35,8 +35,8 @@ public class SmartDoorClient {
 		asyncStub = SmartDoorGrpc.newStub(channel);
 		futureStub =  SmartDoorGrpc.newFutureStub(channel);
 		
-		//openDoor();
-		closeDoor();
+		openDoor();
+		//closeDoor();
 		//unlockDoor();
 		//lockDoor();
 		
@@ -52,14 +52,25 @@ public class SmartDoorClient {
 		
 	}
 	public static void openDoor(){
-		String statusMsg = "";
-        System.out.println("Accessing door controls");
+		
         //startHeating();
         try {
         	
-        	
         	DoorRequest request = DoorRequest.newBuilder().build();
         	DoorResponse status = blockingStub.openDoor(request);
+        	LockRequest request1 = LockRequest.newBuilder().build();
+            LockResponse status1 = blockingStub.unlockDoor(request1);
+            
+            String statusMsg = "";
+            System.out.println("Accessing door controls");
+            
+        	boolean lockCheck = status1.getLockOnOff();
+            if(lockCheck == true){
+                System.out.println("The door is locked, unlocking it now. ");
+                unlockDoor();
+            }else {
+            	System.out.println("test");
+            }
         	
             if(status.getOpenOnOff()){
             	statusMsg = "open";
@@ -86,13 +97,16 @@ public class SmartDoorClient {
         	DoorRequest request = DoorRequest.newBuilder().build();
         	DoorResponse status = blockingStub.closeDoor(request);
         	
-            if(status.getOpenOnOff()){
+        	boolean checkdoor = status.getOpenOnOff();
+        	//checkLock = !checkLock;
+        	
+            if(checkdoor){
             	statusMsg = "open";
-                System.out.println("The door is closed for locking");
+                System.out.println("The door is closed.");
             }
             else{                
                 statusMsg = "closed";
-                System.out.println("The door is already locked");
+                System.out.println("The door is already closed");
             }
 	      
 
@@ -104,16 +118,19 @@ public class SmartDoorClient {
 	
 	public static void unlockDoor(){
 		String statusMsg = "";
-        System.out.println("unlocking the door...");
+		System.out.println("Accessing door controls");
         //startHeating();
         try {
-            LockStatus request = LockStatus.newBuilder().setLockOnOff(false).build();
-            LockStatus status = blockingStub.unlockDoor(request);
+            LockRequest request = LockRequest.newBuilder().build();
+            LockResponse status = blockingStub.unlockDoor(request);
+            
             if(status.getLockOnOff()){
                 statusMsg = "unlocked";
+                System.out.println("The door is still locked");
             }
             else{
                 statusMsg = "locked";
+                System.out.println("The door is now unlocked.");
             }
             System.out.println("The door is now: " + statusMsg);
             
@@ -121,28 +138,47 @@ public class SmartDoorClient {
             logger.log(Level.WARNING, "RPC failed", e);
             return;
         }
+
+        //startHeating();       
+        
     }
 	
 	public static void lockDoor(){
-		closeDoor();
-		String statusMsg = "";
-        System.out.println("locking the door...");
-        //startHeating();
+		
+	
         try {
-            LockStatus request = LockStatus.newBuilder().setLockOnOff(false).build();
-            LockStatus status = blockingStub.unlockDoor(request);
+        	DoorRequest request1 = DoorRequest.newBuilder().build();
+        	DoorResponse status1 = blockingStub.closeDoor(request1);
+        	LockRequest request = LockRequest.newBuilder().build();
+            LockResponse status = blockingStub.lockDoor(request);
+        	boolean doorCheck = status1.getOpenOnOff();
+            if(doorCheck == true){
+                System.out.println("The door is open, Closing it now. ");
+                closeDoor();
+            }else {
+            	System.out.println("test");
+            }
+
+    		
+    		//closeDoor();
+    		String statusMsg = "";
+    		System.out.println("Accessing door controls");
+            //startHeating();
+        	
             if(status.getLockOnOff()){
-                statusMsg = "locked";
+            	
+                System.out.println("The door is now locked.");
             }
-            else{
-                statusMsg = "unlocked";
+            else{                
+                
+                System.out.println("The door is now: unlocked.");
             }
-            System.out.println("The door is now: " + statusMsg);
             
         } catch (RuntimeException e) {
             logger.log(Level.WARNING, "RPC failed", e);
             return;
         }
-    }
+    }	
+	
 	
 }

@@ -9,8 +9,8 @@ service SmartDoor {
     rpc switchOff(SwitchStatus) returns (SwitchStatus) {}
     rpc openDoor(DoorRequest) returns (DoorResponse) {}
     rpc closeDoor(DoorRequest) returns (DoorResponse) {}
-    rpc lockDoor(LockStatus) returns (LockStatus) {}
-    rpc unlockDoor(LockStatus) returns (LockStatus) {}
+    rpc lockDoor(LockRequest) returns (LockResponse) {}
+    rpc unlockDoor(LockRequest) returns (LockResponse) {}
 }
 
 message SwitchStatus{
@@ -25,8 +25,11 @@ message DoorResponse{
   bool openOnOff= 1;
   string statusMsg = 2;
 }
-
-message LockStatus{
+message LockRequest{
   bool lockOnOff= 1;
-  string statusMsg = 2;
+  string statusMsg = 2;  
+}
+message LockResponse{
+  bool lockOnOff= 1;
+  string statusMsg = 2;  
 }

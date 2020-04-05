@@ -36,7 +36,8 @@ public class SmartDoorServer extends SmartDoorImplBase {
 	        
 	        //private boolean door_status = false;
 	        //private boolean lock_status = false;
-	    boolean door = false;      
+	    boolean door = false;    
+	    boolean lock = false;   
 	    
 		@Override
 	    public void openDoor(DoorRequest request,
@@ -63,7 +64,8 @@ public class SmartDoorServer extends SmartDoorImplBase {
 	    public void closeDoor(DoorRequest request,
 		        io.grpc.stub.StreamObserver<DoorResponse> response) {
 							
-				boolean door = request.getOpenOnOff();
+				//boolean door = request.getOpenOnOff();
+	    		door = false;
 
 		        System.out.println("Checking if door is closed for locking.");
 
@@ -73,31 +75,47 @@ public class SmartDoorServer extends SmartDoorImplBase {
 		        response.onCompleted();
 		        
 		    }
-	    @Override
-	    
-	    public void unlockDoor(LockStatus request,
-	        io.grpc.stub.StreamObserver<LockStatus> response) {
-	    	boolean fire = true;
+	    @Override	    
+	    public void unlockDoor(LockRequest request,
+	        io.grpc.stub.StreamObserver<LockResponse> response) {
+	    	
+	    	   
+
+	    	lock = false;
 	
 	    	//lock_status = true;
-			String output = "The door is now unlocked.";   
+			String output = "Checking if door is locked before opening.";   
 			
-			LockStatus lock_Status = LockStatus.newBuilder().setStatusMsg(output).setLockOnOff(fire).build();
-	        response.onNext(lock_Status);
+			LockResponse Status = LockResponse.newBuilder().setLockOnOff(lock).build();
+	        response.onNext(Status);
 	        response.onCompleted();
-					
+	        
+	        //boolean door = request.getOpenOnOff();
+
+	        System.out.println("Checking if door is closed for locking.");
+
+				
 	    }
 	
 	    @Override
-	    public void lockDoor(LockStatus request,
-	        io.grpc.stub.StreamObserver<LockStatus> response) {
-	    	//lock_status = false;
-	    	boolean fire = false;
-	    	String output = "The door is now locked.";   
+	    public void lockDoor(LockRequest request,
+	        io.grpc.stub.StreamObserver<LockResponse> response) {
+
+			lock = !lock;
 			
-	    	LockStatus lock_Status = LockStatus.newBuilder().setStatusMsg(output).setLockOnOff(fire).build();
-	        response.onNext(lock_Status);
-	        response.onCompleted();
+			if (lock) {
+	        	System.out.println("Locking the door...");
+	        }
+	        else {
+	        	System.out.println("Unlocking the door...");
+	        }
+
+			
+			LockResponse Status = LockResponse.newBuilder().setLockOnOff(lock).build();
+	        response.onNext(Status);
+	        response.onCompleted();	        
+	 
+	        
 	    }
 	//}
 

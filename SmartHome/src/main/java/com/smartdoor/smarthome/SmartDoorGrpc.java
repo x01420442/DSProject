@@ -155,30 +155,30 @@ public final class SmartDoorGrpc {
      return getCloseDoorMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockStatus,
-      com.smartdoor.smarthome.LockStatus> getLockDoorMethod;
+  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest,
+      com.smartdoor.smarthome.LockResponse> getLockDoorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "lockDoor",
-      requestType = com.smartdoor.smarthome.LockStatus.class,
-      responseType = com.smartdoor.smarthome.LockStatus.class,
+      requestType = com.smartdoor.smarthome.LockRequest.class,
+      responseType = com.smartdoor.smarthome.LockResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockStatus,
-      com.smartdoor.smarthome.LockStatus> getLockDoorMethod() {
-    io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockStatus, com.smartdoor.smarthome.LockStatus> getLockDoorMethod;
+  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest,
+      com.smartdoor.smarthome.LockResponse> getLockDoorMethod() {
+    io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest, com.smartdoor.smarthome.LockResponse> getLockDoorMethod;
     if ((getLockDoorMethod = SmartDoorGrpc.getLockDoorMethod) == null) {
       synchronized (SmartDoorGrpc.class) {
         if ((getLockDoorMethod = SmartDoorGrpc.getLockDoorMethod) == null) {
           SmartDoorGrpc.getLockDoorMethod = getLockDoorMethod = 
-              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.LockStatus, com.smartdoor.smarthome.LockStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.LockRequest, com.smartdoor.smarthome.LockResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "SmartDoor", "lockDoor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.LockStatus.getDefaultInstance()))
+                  com.smartdoor.smarthome.LockRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.LockStatus.getDefaultInstance()))
+                  com.smartdoor.smarthome.LockResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new SmartDoorMethodDescriptorSupplier("lockDoor"))
                   .build();
           }
@@ -187,30 +187,30 @@ public final class SmartDoorGrpc {
      return getLockDoorMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockStatus,
-      com.smartdoor.smarthome.LockStatus> getUnlockDoorMethod;
+  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest,
+      com.smartdoor.smarthome.LockResponse> getUnlockDoorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "unlockDoor",
-      requestType = com.smartdoor.smarthome.LockStatus.class,
-      responseType = com.smartdoor.smarthome.LockStatus.class,
+      requestType = com.smartdoor.smarthome.LockRequest.class,
+      responseType = com.smartdoor.smarthome.LockResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockStatus,
-      com.smartdoor.smarthome.LockStatus> getUnlockDoorMethod() {
-    io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockStatus, com.smartdoor.smarthome.LockStatus> getUnlockDoorMethod;
+  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest,
+      com.smartdoor.smarthome.LockResponse> getUnlockDoorMethod() {
+    io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest, com.smartdoor.smarthome.LockResponse> getUnlockDoorMethod;
     if ((getUnlockDoorMethod = SmartDoorGrpc.getUnlockDoorMethod) == null) {
       synchronized (SmartDoorGrpc.class) {
         if ((getUnlockDoorMethod = SmartDoorGrpc.getUnlockDoorMethod) == null) {
           SmartDoorGrpc.getUnlockDoorMethod = getUnlockDoorMethod = 
-              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.LockStatus, com.smartdoor.smarthome.LockStatus>newBuilder()
+              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.LockRequest, com.smartdoor.smarthome.LockResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "SmartDoor", "unlockDoor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.LockStatus.getDefaultInstance()))
+                  com.smartdoor.smarthome.LockRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.LockStatus.getDefaultInstance()))
+                  com.smartdoor.smarthome.LockResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new SmartDoorMethodDescriptorSupplier("unlockDoor"))
                   .build();
           }
@@ -276,15 +276,15 @@ public final class SmartDoorGrpc {
 
     /**
      */
-    public void lockDoor(com.smartdoor.smarthome.LockStatus request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockStatus> responseObserver) {
+    public void lockDoor(com.smartdoor.smarthome.LockRequest request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getLockDoorMethod(), responseObserver);
     }
 
     /**
      */
-    public void unlockDoor(com.smartdoor.smarthome.LockStatus request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockStatus> responseObserver) {
+    public void unlockDoor(com.smartdoor.smarthome.LockRequest request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getUnlockDoorMethod(), responseObserver);
     }
 
@@ -322,15 +322,15 @@ public final class SmartDoorGrpc {
             getLockDoorMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.smartdoor.smarthome.LockStatus,
-                com.smartdoor.smarthome.LockStatus>(
+                com.smartdoor.smarthome.LockRequest,
+                com.smartdoor.smarthome.LockResponse>(
                   this, METHODID_LOCK_DOOR)))
           .addMethod(
             getUnlockDoorMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.smartdoor.smarthome.LockStatus,
-                com.smartdoor.smarthome.LockStatus>(
+                com.smartdoor.smarthome.LockRequest,
+                com.smartdoor.smarthome.LockResponse>(
                   this, METHODID_UNLOCK_DOOR)))
           .build();
     }
@@ -388,16 +388,16 @@ public final class SmartDoorGrpc {
 
     /**
      */
-    public void lockDoor(com.smartdoor.smarthome.LockStatus request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockStatus> responseObserver) {
+    public void lockDoor(com.smartdoor.smarthome.LockRequest request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getLockDoorMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void unlockDoor(com.smartdoor.smarthome.LockStatus request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockStatus> responseObserver) {
+    public void unlockDoor(com.smartdoor.smarthome.LockRequest request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getUnlockDoorMethod(), getCallOptions()), request, responseObserver);
     }
@@ -451,14 +451,14 @@ public final class SmartDoorGrpc {
 
     /**
      */
-    public com.smartdoor.smarthome.LockStatus lockDoor(com.smartdoor.smarthome.LockStatus request) {
+    public com.smartdoor.smarthome.LockResponse lockDoor(com.smartdoor.smarthome.LockRequest request) {
       return blockingUnaryCall(
           getChannel(), getLockDoorMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.smartdoor.smarthome.LockStatus unlockDoor(com.smartdoor.smarthome.LockStatus request) {
+    public com.smartdoor.smarthome.LockResponse unlockDoor(com.smartdoor.smarthome.LockRequest request) {
       return blockingUnaryCall(
           getChannel(), getUnlockDoorMethod(), getCallOptions(), request);
     }
@@ -516,16 +516,16 @@ public final class SmartDoorGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.LockStatus> lockDoor(
-        com.smartdoor.smarthome.LockStatus request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.LockResponse> lockDoor(
+        com.smartdoor.smarthome.LockRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getLockDoorMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.LockStatus> unlockDoor(
-        com.smartdoor.smarthome.LockStatus request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.LockResponse> unlockDoor(
+        com.smartdoor.smarthome.LockRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUnlockDoorMethod(), getCallOptions()), request);
     }
@@ -572,12 +572,12 @@ public final class SmartDoorGrpc {
               (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorResponse>) responseObserver);
           break;
         case METHODID_LOCK_DOOR:
-          serviceImpl.lockDoor((com.smartdoor.smarthome.LockStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockStatus>) responseObserver);
+          serviceImpl.lockDoor((com.smartdoor.smarthome.LockRequest) request,
+              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse>) responseObserver);
           break;
         case METHODID_UNLOCK_DOOR:
-          serviceImpl.unlockDoor((com.smartdoor.smarthome.LockStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockStatus>) responseObserver);
+          serviceImpl.unlockDoor((com.smartdoor.smarthome.LockRequest) request,
+              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
