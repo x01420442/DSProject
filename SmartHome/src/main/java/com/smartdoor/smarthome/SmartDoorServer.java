@@ -2,17 +2,10 @@
 package com.smartdoor.smarthome;
 
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.logging.Logger;
-
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
-
 import com.smartdoor.smarthome.SmartDoorGrpc.SmartDoorImplBase;
-import io.grpc.stub.StreamObserver;
-
 
 public class SmartDoorServer extends SmartDoorImplBase {
 	
@@ -31,92 +24,73 @@ public class SmartDoorServer extends SmartDoorImplBase {
 	
 		server.awaitTermination();
 	}
-	
-	//private class DoorImplementation extends SmartDoorGrpc.SmartDoorImplBase {
-	        
-	        //private boolean door_status = false;
-	        //private boolean lock_status = false;
+	//booleans saved to a setting
 	    boolean door = false;    
 	    boolean lock = false;   
 	    
+	    //function that is used to toggle the door opened or closed
 		@Override
-	    public void openDoor(DoorRequest request,
-	        io.grpc.stub.StreamObserver<DoorResponse> response) {
-						
-			 //door = request.getOpenOnOff();
+	    public void openDoor(DoorToggle request,
+	        io.grpc.stub.StreamObserver<DoorToggle> response) {
+
+			//variable which flips the state of a boolean
 			door = !door;
-			
+			// if statment checks the state of the boolean
 			if (door) {
 	        	System.out.println("Opening the door...");
 	        }
 	        else {
 	        	System.out.println("Closing the door...");
 	        }
-
 			
-			DoorResponse Door_Status = DoorResponse.newBuilder().setOpenOnOff(door).build();
+			DoorToggle Door_Status = DoorToggle.newBuilder().setOpenOnOff(door).build();
 	        response.onNext(Door_Status);
-	        response.onCompleted();
-	        
+	        response.onCompleted();	        
 	    }
 	
 	    @Override
-	    public void closeDoor(DoorRequest request,
-		        io.grpc.stub.StreamObserver<DoorResponse> response) {
-							
-				//boolean door = request.getOpenOnOff();
+	    //function used to close the door before atempting to lock it
+	    public void closeDoor(DoorToggle request,
+		        io.grpc.stub.StreamObserver<DoorToggle> response) {
+
 	    		door = false;
 
 		        System.out.println("Checking if door is closed for locking.");
-
  				
-				DoorResponse Door_Status = DoorResponse.newBuilder().setOpenOnOff(door).build();
+		        DoorToggle Door_Status = DoorToggle.newBuilder().setOpenOnOff(door).build();
 		        response.onNext(Door_Status);
-		        response.onCompleted();
-		        
+		        response.onCompleted();		        
 		    }
+	    
+	    //function used to unlock the door before it can be opened
 	    @Override	    
-	    public void unlockDoor(LockRequest request,
-	        io.grpc.stub.StreamObserver<LockResponse> response) {
-	    	
+	    public void unlockDoor(LockToggle request,
+	        io.grpc.stub.StreamObserver<LockToggle> response) {   	
 	    	   
-
 	    	lock = false;
-	
-	    	//lock_status = true;
-			String output = "Checking if door is locked before opening.";   
-			
-			LockResponse Status = LockResponse.newBuilder().setLockOnOff(lock).build();
+		
+			LockToggle Status = LockToggle.newBuilder().setLockOnOff(lock).build();
 	        response.onNext(Status);
 	        response.onCompleted();
-	        
-	        //boolean door = request.getOpenOnOff();
 
-	        System.out.println("Checking if door is closed for locking.");
-
-				
+	        System.out.println("Checking if door is closed for locking.");				
 	    }
-	
+	    //function used to toggle the door as locked or unlocked
 	    @Override
-	    public void lockDoor(LockRequest request,
-	        io.grpc.stub.StreamObserver<LockResponse> response) {
-
+	    public void lockDoor(LockToggle request,
+	        io.grpc.stub.StreamObserver<LockToggle> response) {
+	    	//variable that flips a booleon to its oposite state
 			lock = !lock;
-			
+			//if statment that checks the state of the boolean
 			if (lock) {
 	        	System.out.println("Locking the door...");
 	        }
 	        else {
 	        	System.out.println("Unlocking the door...");
 	        }
-
 			
-			LockResponse Status = LockResponse.newBuilder().setLockOnOff(lock).build();
+			LockToggle Status = LockToggle.newBuilder().setLockOnOff(lock).build();
 	        response.onNext(Status);
-	        response.onCompleted();	        
-	 
-	        
+	        response.onCompleted();              
 	    }
-	//}
-
 }

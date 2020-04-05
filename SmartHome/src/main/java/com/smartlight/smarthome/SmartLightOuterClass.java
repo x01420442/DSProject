@@ -15,11 +15,6 @@ public final class SmartLightOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SwitchStatus_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SwitchStatus_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_LightsStatus_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -38,19 +33,17 @@ public final class SmartLightOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020smartLight.proto\"#\n\014SwitchStatus\022\023\n\013sw" +
-      "itchOnOff\030\001 \001(\010\"6\n\014LightsStatus\022\023\n\013light" +
-      "sOnOff\030\002 \001(\010\022\021\n\tstatusMsg\030\003 \001(\t\"8\n\020Inten" +
-      "sitySetting\022\021\n\tintensity\030\004 \001(\005\022\021\n\tstatus" +
-      "Msg\030\005 \001(\t2\265\002\n\nSmartLight\022*\n\010switchOn\022\r.S" +
-      "witchStatus\032\r.SwitchStatus\"\000\022+\n\tswitchOf" +
-      "f\022\r.SwitchStatus\032\r.SwitchStatus\"\000\022*\n\010lig" +
-      "htsOn\022\r.LightsStatus\032\r.LightsStatus\"\000\022+\n" +
-      "\tlightsOff\022\r.LightsStatus\032\r.LightsStatus" +
-      "\"\000\022;\n\017brightintensity\022\021.IntensitySetting" +
-      "\032\021.IntensitySetting\"\0000\001\0228\n\014dimintensity\022" +
-      "\021.IntensitySetting\032\021.IntensitySetting\"\0000" +
-      "\001B\034\n\030com.smartlight.smarthomeP\001b\006proto3"
+      "\n\020smartLight.proto\"6\n\014LightsStatus\022\023\n\013li" +
+      "ghtsOnOff\030\002 \001(\010\022\021\n\tstatusMsg\030\003 \001(\t\"8\n\020In" +
+      "tensitySetting\022\021\n\tintensity\030\004 \001(\005\022\021\n\tsta" +
+      "tusMsg\030\005 \001(\t2\350\001\n\nSmartLight\022*\n\010lightsOn\022" +
+      "\r.LightsStatus\032\r.LightsStatus\"\000\022;\n\017brigh" +
+      "tintensity\022\021.IntensitySetting\032\021.Intensit" +
+      "ySetting\"\0000\001\0228\n\014dimintensity\022\021.Intensity" +
+      "Setting\032\021.IntensitySetting\"\0000\001\0227\n\013nointe" +
+      "nsity\022\021.IntensitySetting\032\021.IntensitySett" +
+      "ing\"\0000\001B\034\n\030com.smartlight.smarthomeP\001b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -64,20 +57,14 @@ public final class SmartLightOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_SwitchStatus_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_SwitchStatus_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SwitchStatus_descriptor,
-        new java.lang.String[] { "SwitchOnOff", });
     internal_static_LightsStatus_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_LightsStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LightsStatus_descriptor,
         new java.lang.String[] { "LightsOnOff", "StatusMsg", });
     internal_static_IntensitySetting_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_IntensitySetting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IntensitySetting_descriptor,

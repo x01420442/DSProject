@@ -27,94 +27,30 @@ public final class SmartDoorGrpc {
   public static final String SERVICE_NAME = "SmartDoor";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.SwitchStatus,
-      com.smartdoor.smarthome.SwitchStatus> getSwitchOnMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "switchOn",
-      requestType = com.smartdoor.smarthome.SwitchStatus.class,
-      responseType = com.smartdoor.smarthome.SwitchStatus.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.SwitchStatus,
-      com.smartdoor.smarthome.SwitchStatus> getSwitchOnMethod() {
-    io.grpc.MethodDescriptor<com.smartdoor.smarthome.SwitchStatus, com.smartdoor.smarthome.SwitchStatus> getSwitchOnMethod;
-    if ((getSwitchOnMethod = SmartDoorGrpc.getSwitchOnMethod) == null) {
-      synchronized (SmartDoorGrpc.class) {
-        if ((getSwitchOnMethod = SmartDoorGrpc.getSwitchOnMethod) == null) {
-          SmartDoorGrpc.getSwitchOnMethod = getSwitchOnMethod = 
-              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.SwitchStatus, com.smartdoor.smarthome.SwitchStatus>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "SmartDoor", "switchOn"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.SwitchStatus.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.SwitchStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartDoorMethodDescriptorSupplier("switchOn"))
-                  .build();
-          }
-        }
-     }
-     return getSwitchOnMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.SwitchStatus,
-      com.smartdoor.smarthome.SwitchStatus> getSwitchOffMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "switchOff",
-      requestType = com.smartdoor.smarthome.SwitchStatus.class,
-      responseType = com.smartdoor.smarthome.SwitchStatus.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.SwitchStatus,
-      com.smartdoor.smarthome.SwitchStatus> getSwitchOffMethod() {
-    io.grpc.MethodDescriptor<com.smartdoor.smarthome.SwitchStatus, com.smartdoor.smarthome.SwitchStatus> getSwitchOffMethod;
-    if ((getSwitchOffMethod = SmartDoorGrpc.getSwitchOffMethod) == null) {
-      synchronized (SmartDoorGrpc.class) {
-        if ((getSwitchOffMethod = SmartDoorGrpc.getSwitchOffMethod) == null) {
-          SmartDoorGrpc.getSwitchOffMethod = getSwitchOffMethod = 
-              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.SwitchStatus, com.smartdoor.smarthome.SwitchStatus>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "SmartDoor", "switchOff"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.SwitchStatus.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.SwitchStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartDoorMethodDescriptorSupplier("switchOff"))
-                  .build();
-          }
-        }
-     }
-     return getSwitchOffMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorRequest,
-      com.smartdoor.smarthome.DoorResponse> getOpenDoorMethod;
+  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorToggle,
+      com.smartdoor.smarthome.DoorToggle> getOpenDoorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "openDoor",
-      requestType = com.smartdoor.smarthome.DoorRequest.class,
-      responseType = com.smartdoor.smarthome.DoorResponse.class,
+      requestType = com.smartdoor.smarthome.DoorToggle.class,
+      responseType = com.smartdoor.smarthome.DoorToggle.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorRequest,
-      com.smartdoor.smarthome.DoorResponse> getOpenDoorMethod() {
-    io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorRequest, com.smartdoor.smarthome.DoorResponse> getOpenDoorMethod;
+  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorToggle,
+      com.smartdoor.smarthome.DoorToggle> getOpenDoorMethod() {
+    io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorToggle, com.smartdoor.smarthome.DoorToggle> getOpenDoorMethod;
     if ((getOpenDoorMethod = SmartDoorGrpc.getOpenDoorMethod) == null) {
       synchronized (SmartDoorGrpc.class) {
         if ((getOpenDoorMethod = SmartDoorGrpc.getOpenDoorMethod) == null) {
           SmartDoorGrpc.getOpenDoorMethod = getOpenDoorMethod = 
-              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.DoorRequest, com.smartdoor.smarthome.DoorResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.DoorToggle, com.smartdoor.smarthome.DoorToggle>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "SmartDoor", "openDoor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.DoorRequest.getDefaultInstance()))
+                  com.smartdoor.smarthome.DoorToggle.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.DoorResponse.getDefaultInstance()))
+                  com.smartdoor.smarthome.DoorToggle.getDefaultInstance()))
                   .setSchemaDescriptor(new SmartDoorMethodDescriptorSupplier("openDoor"))
                   .build();
           }
@@ -123,30 +59,30 @@ public final class SmartDoorGrpc {
      return getOpenDoorMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorRequest,
-      com.smartdoor.smarthome.DoorResponse> getCloseDoorMethod;
+  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorToggle,
+      com.smartdoor.smarthome.DoorToggle> getCloseDoorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "closeDoor",
-      requestType = com.smartdoor.smarthome.DoorRequest.class,
-      responseType = com.smartdoor.smarthome.DoorResponse.class,
+      requestType = com.smartdoor.smarthome.DoorToggle.class,
+      responseType = com.smartdoor.smarthome.DoorToggle.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorRequest,
-      com.smartdoor.smarthome.DoorResponse> getCloseDoorMethod() {
-    io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorRequest, com.smartdoor.smarthome.DoorResponse> getCloseDoorMethod;
+  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorToggle,
+      com.smartdoor.smarthome.DoorToggle> getCloseDoorMethod() {
+    io.grpc.MethodDescriptor<com.smartdoor.smarthome.DoorToggle, com.smartdoor.smarthome.DoorToggle> getCloseDoorMethod;
     if ((getCloseDoorMethod = SmartDoorGrpc.getCloseDoorMethod) == null) {
       synchronized (SmartDoorGrpc.class) {
         if ((getCloseDoorMethod = SmartDoorGrpc.getCloseDoorMethod) == null) {
           SmartDoorGrpc.getCloseDoorMethod = getCloseDoorMethod = 
-              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.DoorRequest, com.smartdoor.smarthome.DoorResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.DoorToggle, com.smartdoor.smarthome.DoorToggle>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "SmartDoor", "closeDoor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.DoorRequest.getDefaultInstance()))
+                  com.smartdoor.smarthome.DoorToggle.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.DoorResponse.getDefaultInstance()))
+                  com.smartdoor.smarthome.DoorToggle.getDefaultInstance()))
                   .setSchemaDescriptor(new SmartDoorMethodDescriptorSupplier("closeDoor"))
                   .build();
           }
@@ -155,30 +91,30 @@ public final class SmartDoorGrpc {
      return getCloseDoorMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest,
-      com.smartdoor.smarthome.LockResponse> getLockDoorMethod;
+  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockToggle,
+      com.smartdoor.smarthome.LockToggle> getLockDoorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "lockDoor",
-      requestType = com.smartdoor.smarthome.LockRequest.class,
-      responseType = com.smartdoor.smarthome.LockResponse.class,
+      requestType = com.smartdoor.smarthome.LockToggle.class,
+      responseType = com.smartdoor.smarthome.LockToggle.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest,
-      com.smartdoor.smarthome.LockResponse> getLockDoorMethod() {
-    io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest, com.smartdoor.smarthome.LockResponse> getLockDoorMethod;
+  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockToggle,
+      com.smartdoor.smarthome.LockToggle> getLockDoorMethod() {
+    io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockToggle, com.smartdoor.smarthome.LockToggle> getLockDoorMethod;
     if ((getLockDoorMethod = SmartDoorGrpc.getLockDoorMethod) == null) {
       synchronized (SmartDoorGrpc.class) {
         if ((getLockDoorMethod = SmartDoorGrpc.getLockDoorMethod) == null) {
           SmartDoorGrpc.getLockDoorMethod = getLockDoorMethod = 
-              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.LockRequest, com.smartdoor.smarthome.LockResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.LockToggle, com.smartdoor.smarthome.LockToggle>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "SmartDoor", "lockDoor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.LockRequest.getDefaultInstance()))
+                  com.smartdoor.smarthome.LockToggle.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.LockResponse.getDefaultInstance()))
+                  com.smartdoor.smarthome.LockToggle.getDefaultInstance()))
                   .setSchemaDescriptor(new SmartDoorMethodDescriptorSupplier("lockDoor"))
                   .build();
           }
@@ -187,30 +123,30 @@ public final class SmartDoorGrpc {
      return getLockDoorMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest,
-      com.smartdoor.smarthome.LockResponse> getUnlockDoorMethod;
+  private static volatile io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockToggle,
+      com.smartdoor.smarthome.LockToggle> getUnlockDoorMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "unlockDoor",
-      requestType = com.smartdoor.smarthome.LockRequest.class,
-      responseType = com.smartdoor.smarthome.LockResponse.class,
+      requestType = com.smartdoor.smarthome.LockToggle.class,
+      responseType = com.smartdoor.smarthome.LockToggle.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest,
-      com.smartdoor.smarthome.LockResponse> getUnlockDoorMethod() {
-    io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockRequest, com.smartdoor.smarthome.LockResponse> getUnlockDoorMethod;
+  public static io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockToggle,
+      com.smartdoor.smarthome.LockToggle> getUnlockDoorMethod() {
+    io.grpc.MethodDescriptor<com.smartdoor.smarthome.LockToggle, com.smartdoor.smarthome.LockToggle> getUnlockDoorMethod;
     if ((getUnlockDoorMethod = SmartDoorGrpc.getUnlockDoorMethod) == null) {
       synchronized (SmartDoorGrpc.class) {
         if ((getUnlockDoorMethod = SmartDoorGrpc.getUnlockDoorMethod) == null) {
           SmartDoorGrpc.getUnlockDoorMethod = getUnlockDoorMethod = 
-              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.LockRequest, com.smartdoor.smarthome.LockResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.smartdoor.smarthome.LockToggle, com.smartdoor.smarthome.LockToggle>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "SmartDoor", "unlockDoor"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.LockRequest.getDefaultInstance()))
+                  com.smartdoor.smarthome.LockToggle.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartdoor.smarthome.LockResponse.getDefaultInstance()))
+                  com.smartdoor.smarthome.LockToggle.getDefaultInstance()))
                   .setSchemaDescriptor(new SmartDoorMethodDescriptorSupplier("unlockDoor"))
                   .build();
           }
@@ -247,90 +183,65 @@ public final class SmartDoorGrpc {
   public static abstract class SmartDoorImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     *Two functions of the smart door service. Opening the door and locking the door
+     * </pre>
      */
-    public void switchOn(com.smartdoor.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.SwitchStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getSwitchOnMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void switchOff(com.smartdoor.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.SwitchStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getSwitchOffMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void openDoor(com.smartdoor.smarthome.DoorRequest request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorResponse> responseObserver) {
+    public void openDoor(com.smartdoor.smarthome.DoorToggle request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorToggle> responseObserver) {
       asyncUnimplementedUnaryCall(getOpenDoorMethod(), responseObserver);
     }
 
     /**
      */
-    public void closeDoor(com.smartdoor.smarthome.DoorRequest request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorResponse> responseObserver) {
+    public void closeDoor(com.smartdoor.smarthome.DoorToggle request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorToggle> responseObserver) {
       asyncUnimplementedUnaryCall(getCloseDoorMethod(), responseObserver);
     }
 
     /**
      */
-    public void lockDoor(com.smartdoor.smarthome.LockRequest request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse> responseObserver) {
+    public void lockDoor(com.smartdoor.smarthome.LockToggle request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockToggle> responseObserver) {
       asyncUnimplementedUnaryCall(getLockDoorMethod(), responseObserver);
     }
 
     /**
      */
-    public void unlockDoor(com.smartdoor.smarthome.LockRequest request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse> responseObserver) {
+    public void unlockDoor(com.smartdoor.smarthome.LockToggle request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockToggle> responseObserver) {
       asyncUnimplementedUnaryCall(getUnlockDoorMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getSwitchOnMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartdoor.smarthome.SwitchStatus,
-                com.smartdoor.smarthome.SwitchStatus>(
-                  this, METHODID_SWITCH_ON)))
-          .addMethod(
-            getSwitchOffMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartdoor.smarthome.SwitchStatus,
-                com.smartdoor.smarthome.SwitchStatus>(
-                  this, METHODID_SWITCH_OFF)))
-          .addMethod(
             getOpenDoorMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.smartdoor.smarthome.DoorRequest,
-                com.smartdoor.smarthome.DoorResponse>(
+                com.smartdoor.smarthome.DoorToggle,
+                com.smartdoor.smarthome.DoorToggle>(
                   this, METHODID_OPEN_DOOR)))
           .addMethod(
             getCloseDoorMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.smartdoor.smarthome.DoorRequest,
-                com.smartdoor.smarthome.DoorResponse>(
+                com.smartdoor.smarthome.DoorToggle,
+                com.smartdoor.smarthome.DoorToggle>(
                   this, METHODID_CLOSE_DOOR)))
           .addMethod(
             getLockDoorMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.smartdoor.smarthome.LockRequest,
-                com.smartdoor.smarthome.LockResponse>(
+                com.smartdoor.smarthome.LockToggle,
+                com.smartdoor.smarthome.LockToggle>(
                   this, METHODID_LOCK_DOOR)))
           .addMethod(
             getUnlockDoorMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.smartdoor.smarthome.LockRequest,
-                com.smartdoor.smarthome.LockResponse>(
+                com.smartdoor.smarthome.LockToggle,
+                com.smartdoor.smarthome.LockToggle>(
                   this, METHODID_UNLOCK_DOOR)))
           .build();
     }
@@ -355,49 +266,36 @@ public final class SmartDoorGrpc {
     }
 
     /**
+     * <pre>
+     *Two functions of the smart door service. Opening the door and locking the door
+     * </pre>
      */
-    public void switchOn(com.smartdoor.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.SwitchStatus> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void switchOff(com.smartdoor.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.SwitchStatus> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void openDoor(com.smartdoor.smarthome.DoorRequest request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorResponse> responseObserver) {
+    public void openDoor(com.smartdoor.smarthome.DoorToggle request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorToggle> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getOpenDoorMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void closeDoor(com.smartdoor.smarthome.DoorRequest request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorResponse> responseObserver) {
+    public void closeDoor(com.smartdoor.smarthome.DoorToggle request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorToggle> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCloseDoorMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void lockDoor(com.smartdoor.smarthome.LockRequest request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse> responseObserver) {
+    public void lockDoor(com.smartdoor.smarthome.LockToggle request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockToggle> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getLockDoorMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void unlockDoor(com.smartdoor.smarthome.LockRequest request,
-        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse> responseObserver) {
+    public void unlockDoor(com.smartdoor.smarthome.LockToggle request,
+        io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockToggle> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getUnlockDoorMethod(), getCallOptions()), request, responseObserver);
     }
@@ -422,43 +320,32 @@ public final class SmartDoorGrpc {
     }
 
     /**
+     * <pre>
+     *Two functions of the smart door service. Opening the door and locking the door
+     * </pre>
      */
-    public com.smartdoor.smarthome.SwitchStatus switchOn(com.smartdoor.smarthome.SwitchStatus request) {
-      return blockingUnaryCall(
-          getChannel(), getSwitchOnMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.smartdoor.smarthome.SwitchStatus switchOff(com.smartdoor.smarthome.SwitchStatus request) {
-      return blockingUnaryCall(
-          getChannel(), getSwitchOffMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.smartdoor.smarthome.DoorResponse openDoor(com.smartdoor.smarthome.DoorRequest request) {
+    public com.smartdoor.smarthome.DoorToggle openDoor(com.smartdoor.smarthome.DoorToggle request) {
       return blockingUnaryCall(
           getChannel(), getOpenDoorMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.smartdoor.smarthome.DoorResponse closeDoor(com.smartdoor.smarthome.DoorRequest request) {
+    public com.smartdoor.smarthome.DoorToggle closeDoor(com.smartdoor.smarthome.DoorToggle request) {
       return blockingUnaryCall(
           getChannel(), getCloseDoorMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.smartdoor.smarthome.LockResponse lockDoor(com.smartdoor.smarthome.LockRequest request) {
+    public com.smartdoor.smarthome.LockToggle lockDoor(com.smartdoor.smarthome.LockToggle request) {
       return blockingUnaryCall(
           getChannel(), getLockDoorMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.smartdoor.smarthome.LockResponse unlockDoor(com.smartdoor.smarthome.LockRequest request) {
+    public com.smartdoor.smarthome.LockToggle unlockDoor(com.smartdoor.smarthome.LockToggle request) {
       return blockingUnaryCall(
           getChannel(), getUnlockDoorMethod(), getCallOptions(), request);
     }
@@ -483,60 +370,45 @@ public final class SmartDoorGrpc {
     }
 
     /**
+     * <pre>
+     *Two functions of the smart door service. Opening the door and locking the door
+     * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.SwitchStatus> switchOn(
-        com.smartdoor.smarthome.SwitchStatus request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.SwitchStatus> switchOff(
-        com.smartdoor.smarthome.SwitchStatus request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.DoorResponse> openDoor(
-        com.smartdoor.smarthome.DoorRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.DoorToggle> openDoor(
+        com.smartdoor.smarthome.DoorToggle request) {
       return futureUnaryCall(
           getChannel().newCall(getOpenDoorMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.DoorResponse> closeDoor(
-        com.smartdoor.smarthome.DoorRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.DoorToggle> closeDoor(
+        com.smartdoor.smarthome.DoorToggle request) {
       return futureUnaryCall(
           getChannel().newCall(getCloseDoorMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.LockResponse> lockDoor(
-        com.smartdoor.smarthome.LockRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.LockToggle> lockDoor(
+        com.smartdoor.smarthome.LockToggle request) {
       return futureUnaryCall(
           getChannel().newCall(getLockDoorMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.LockResponse> unlockDoor(
-        com.smartdoor.smarthome.LockRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.smartdoor.smarthome.LockToggle> unlockDoor(
+        com.smartdoor.smarthome.LockToggle request) {
       return futureUnaryCall(
           getChannel().newCall(getUnlockDoorMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_SWITCH_ON = 0;
-  private static final int METHODID_SWITCH_OFF = 1;
-  private static final int METHODID_OPEN_DOOR = 2;
-  private static final int METHODID_CLOSE_DOOR = 3;
-  private static final int METHODID_LOCK_DOOR = 4;
-  private static final int METHODID_UNLOCK_DOOR = 5;
+  private static final int METHODID_OPEN_DOOR = 0;
+  private static final int METHODID_CLOSE_DOOR = 1;
+  private static final int METHODID_LOCK_DOOR = 2;
+  private static final int METHODID_UNLOCK_DOOR = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -555,29 +427,21 @@ public final class SmartDoorGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_SWITCH_ON:
-          serviceImpl.switchOn((com.smartdoor.smarthome.SwitchStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.SwitchStatus>) responseObserver);
-          break;
-        case METHODID_SWITCH_OFF:
-          serviceImpl.switchOff((com.smartdoor.smarthome.SwitchStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.SwitchStatus>) responseObserver);
-          break;
         case METHODID_OPEN_DOOR:
-          serviceImpl.openDoor((com.smartdoor.smarthome.DoorRequest) request,
-              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorResponse>) responseObserver);
+          serviceImpl.openDoor((com.smartdoor.smarthome.DoorToggle) request,
+              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorToggle>) responseObserver);
           break;
         case METHODID_CLOSE_DOOR:
-          serviceImpl.closeDoor((com.smartdoor.smarthome.DoorRequest) request,
-              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorResponse>) responseObserver);
+          serviceImpl.closeDoor((com.smartdoor.smarthome.DoorToggle) request,
+              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.DoorToggle>) responseObserver);
           break;
         case METHODID_LOCK_DOOR:
-          serviceImpl.lockDoor((com.smartdoor.smarthome.LockRequest) request,
-              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse>) responseObserver);
+          serviceImpl.lockDoor((com.smartdoor.smarthome.LockToggle) request,
+              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockToggle>) responseObserver);
           break;
         case METHODID_UNLOCK_DOOR:
-          serviceImpl.unlockDoor((com.smartdoor.smarthome.LockRequest) request,
-              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockResponse>) responseObserver);
+          serviceImpl.unlockDoor((com.smartdoor.smarthome.LockToggle) request,
+              (io.grpc.stub.StreamObserver<com.smartdoor.smarthome.LockToggle>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -640,8 +504,6 @@ public final class SmartDoorGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SmartDoorFileDescriptorSupplier())
-              .addMethod(getSwitchOnMethod())
-              .addMethod(getSwitchOffMethod())
               .addMethod(getOpenDoorMethod())
               .addMethod(getCloseDoorMethod())
               .addMethod(getLockDoorMethod())

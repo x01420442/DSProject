@@ -5,31 +5,19 @@ option java_package = "com.smartdoor.smarthome";
 
 
 service SmartDoor {
-    rpc switchOn(SwitchStatus) returns (SwitchStatus) {}
-    rpc switchOff(SwitchStatus) returns (SwitchStatus) {}
-    rpc openDoor(DoorRequest) returns (DoorResponse) {}
-    rpc closeDoor(DoorRequest) returns (DoorResponse) {}
-    rpc lockDoor(LockRequest) returns (LockResponse) {}
-    rpc unlockDoor(LockRequest) returns (LockResponse) {}
+//Four functions of the smart door service. Opening/closing the door and locking/unlocking the door
+    rpc openDoor(DoorToggle) returns (DoorToggle) {}
+    rpc closeDoor(DoorToggle) returns (DoorToggle) {}
+    rpc lockDoor(LockToggle) returns (LockToggle) {}
+    rpc unlockDoor(LockToggle) returns (LockToggle) {}
 }
-
-message SwitchStatus{
-  bool switchOnOff= 1;
-}
-
-message DoorRequest{
+//The request/response for the functions of the smart door service
+message DoorToggle{
   bool openOnOff= 1;
   string statusMsg = 2;
 }
-message DoorResponse{
-  bool openOnOff= 1;
-  string statusMsg = 2;
-}
-message LockRequest{
-  bool lockOnOff= 1;
-  string statusMsg = 2;  
-}
-message LockResponse{
+
+message LockToggle{
   bool lockOnOff= 1;
   string statusMsg = 2;  
 }

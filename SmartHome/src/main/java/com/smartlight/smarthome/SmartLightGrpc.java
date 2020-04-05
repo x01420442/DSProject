@@ -27,70 +27,6 @@ public final class SmartLightGrpc {
   public static final String SERVICE_NAME = "SmartLight";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.smartlight.smarthome.SwitchStatus,
-      com.smartlight.smarthome.SwitchStatus> getSwitchOnMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "switchOn",
-      requestType = com.smartlight.smarthome.SwitchStatus.class,
-      responseType = com.smartlight.smarthome.SwitchStatus.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartlight.smarthome.SwitchStatus,
-      com.smartlight.smarthome.SwitchStatus> getSwitchOnMethod() {
-    io.grpc.MethodDescriptor<com.smartlight.smarthome.SwitchStatus, com.smartlight.smarthome.SwitchStatus> getSwitchOnMethod;
-    if ((getSwitchOnMethod = SmartLightGrpc.getSwitchOnMethod) == null) {
-      synchronized (SmartLightGrpc.class) {
-        if ((getSwitchOnMethod = SmartLightGrpc.getSwitchOnMethod) == null) {
-          SmartLightGrpc.getSwitchOnMethod = getSwitchOnMethod = 
-              io.grpc.MethodDescriptor.<com.smartlight.smarthome.SwitchStatus, com.smartlight.smarthome.SwitchStatus>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "SmartLight", "switchOn"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartlight.smarthome.SwitchStatus.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartlight.smarthome.SwitchStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartLightMethodDescriptorSupplier("switchOn"))
-                  .build();
-          }
-        }
-     }
-     return getSwitchOnMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.smartlight.smarthome.SwitchStatus,
-      com.smartlight.smarthome.SwitchStatus> getSwitchOffMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "switchOff",
-      requestType = com.smartlight.smarthome.SwitchStatus.class,
-      responseType = com.smartlight.smarthome.SwitchStatus.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartlight.smarthome.SwitchStatus,
-      com.smartlight.smarthome.SwitchStatus> getSwitchOffMethod() {
-    io.grpc.MethodDescriptor<com.smartlight.smarthome.SwitchStatus, com.smartlight.smarthome.SwitchStatus> getSwitchOffMethod;
-    if ((getSwitchOffMethod = SmartLightGrpc.getSwitchOffMethod) == null) {
-      synchronized (SmartLightGrpc.class) {
-        if ((getSwitchOffMethod = SmartLightGrpc.getSwitchOffMethod) == null) {
-          SmartLightGrpc.getSwitchOffMethod = getSwitchOffMethod = 
-              io.grpc.MethodDescriptor.<com.smartlight.smarthome.SwitchStatus, com.smartlight.smarthome.SwitchStatus>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "SmartLight", "switchOff"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartlight.smarthome.SwitchStatus.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartlight.smarthome.SwitchStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartLightMethodDescriptorSupplier("switchOff"))
-                  .build();
-          }
-        }
-     }
-     return getSwitchOffMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.smartlight.smarthome.LightsStatus,
       com.smartlight.smarthome.LightsStatus> getLightsOnMethod;
 
@@ -121,38 +57,6 @@ public final class SmartLightGrpc {
         }
      }
      return getLightsOnMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.smartlight.smarthome.LightsStatus,
-      com.smartlight.smarthome.LightsStatus> getLightsOffMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "lightsOff",
-      requestType = com.smartlight.smarthome.LightsStatus.class,
-      responseType = com.smartlight.smarthome.LightsStatus.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartlight.smarthome.LightsStatus,
-      com.smartlight.smarthome.LightsStatus> getLightsOffMethod() {
-    io.grpc.MethodDescriptor<com.smartlight.smarthome.LightsStatus, com.smartlight.smarthome.LightsStatus> getLightsOffMethod;
-    if ((getLightsOffMethod = SmartLightGrpc.getLightsOffMethod) == null) {
-      synchronized (SmartLightGrpc.class) {
-        if ((getLightsOffMethod = SmartLightGrpc.getLightsOffMethod) == null) {
-          SmartLightGrpc.getLightsOffMethod = getLightsOffMethod = 
-              io.grpc.MethodDescriptor.<com.smartlight.smarthome.LightsStatus, com.smartlight.smarthome.LightsStatus>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "SmartLight", "lightsOff"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartlight.smarthome.LightsStatus.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartlight.smarthome.LightsStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartLightMethodDescriptorSupplier("lightsOff"))
-                  .build();
-          }
-        }
-     }
-     return getLightsOffMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.smartlight.smarthome.IntensitySetting,
@@ -219,6 +123,38 @@ public final class SmartLightGrpc {
      return getDimintensityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.smartlight.smarthome.IntensitySetting,
+      com.smartlight.smarthome.IntensitySetting> getNointensityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "nointensity",
+      requestType = com.smartlight.smarthome.IntensitySetting.class,
+      responseType = com.smartlight.smarthome.IntensitySetting.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.smartlight.smarthome.IntensitySetting,
+      com.smartlight.smarthome.IntensitySetting> getNointensityMethod() {
+    io.grpc.MethodDescriptor<com.smartlight.smarthome.IntensitySetting, com.smartlight.smarthome.IntensitySetting> getNointensityMethod;
+    if ((getNointensityMethod = SmartLightGrpc.getNointensityMethod) == null) {
+      synchronized (SmartLightGrpc.class) {
+        if ((getNointensityMethod = SmartLightGrpc.getNointensityMethod) == null) {
+          SmartLightGrpc.getNointensityMethod = getNointensityMethod = 
+              io.grpc.MethodDescriptor.<com.smartlight.smarthome.IntensitySetting, com.smartlight.smarthome.IntensitySetting>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "SmartLight", "nointensity"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.smartlight.smarthome.IntensitySetting.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.smartlight.smarthome.IntensitySetting.getDefaultInstance()))
+                  .setSchemaDescriptor(new SmartLightMethodDescriptorSupplier("nointensity"))
+                  .build();
+          }
+        }
+     }
+     return getNointensityMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -247,31 +183,13 @@ public final class SmartLightGrpc {
   public static abstract class SmartLightImplBase implements io.grpc.BindableService {
 
     /**
-     */
-    public void switchOn(com.smartlight.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartlight.smarthome.SwitchStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getSwitchOnMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void switchOff(com.smartlight.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartlight.smarthome.SwitchStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getSwitchOffMethod(), responseObserver);
-    }
-
-    /**
+     * <pre>
+     *Fhour functions of the smart lights service. Turning lights on, making lights bright, making lights dim, having zero intensity
+     * </pre>
      */
     public void lightsOn(com.smartlight.smarthome.LightsStatus request,
         io.grpc.stub.StreamObserver<com.smartlight.smarthome.LightsStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getLightsOnMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void lightsOff(com.smartlight.smarthome.LightsStatus request,
-        io.grpc.stub.StreamObserver<com.smartlight.smarthome.LightsStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getLightsOffMethod(), responseObserver);
     }
 
     /**
@@ -288,22 +206,15 @@ public final class SmartLightGrpc {
       asyncUnimplementedUnaryCall(getDimintensityMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void nointensity(com.smartlight.smarthome.IntensitySetting request,
+        io.grpc.stub.StreamObserver<com.smartlight.smarthome.IntensitySetting> responseObserver) {
+      asyncUnimplementedUnaryCall(getNointensityMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getSwitchOnMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartlight.smarthome.SwitchStatus,
-                com.smartlight.smarthome.SwitchStatus>(
-                  this, METHODID_SWITCH_ON)))
-          .addMethod(
-            getSwitchOffMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartlight.smarthome.SwitchStatus,
-                com.smartlight.smarthome.SwitchStatus>(
-                  this, METHODID_SWITCH_OFF)))
           .addMethod(
             getLightsOnMethod(),
             asyncUnaryCall(
@@ -311,13 +222,6 @@ public final class SmartLightGrpc {
                 com.smartlight.smarthome.LightsStatus,
                 com.smartlight.smarthome.LightsStatus>(
                   this, METHODID_LIGHTS_ON)))
-          .addMethod(
-            getLightsOffMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartlight.smarthome.LightsStatus,
-                com.smartlight.smarthome.LightsStatus>(
-                  this, METHODID_LIGHTS_OFF)))
           .addMethod(
             getBrightintensityMethod(),
             asyncServerStreamingCall(
@@ -332,6 +236,13 @@ public final class SmartLightGrpc {
                 com.smartlight.smarthome.IntensitySetting,
                 com.smartlight.smarthome.IntensitySetting>(
                   this, METHODID_DIMINTENSITY)))
+          .addMethod(
+            getNointensityMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.smartlight.smarthome.IntensitySetting,
+                com.smartlight.smarthome.IntensitySetting>(
+                  this, METHODID_NOINTENSITY)))
           .build();
     }
   }
@@ -355,35 +266,14 @@ public final class SmartLightGrpc {
     }
 
     /**
-     */
-    public void switchOn(com.smartlight.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartlight.smarthome.SwitchStatus> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void switchOff(com.smartlight.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartlight.smarthome.SwitchStatus> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
+     * <pre>
+     *Fhour functions of the smart lights service. Turning lights on, making lights bright, making lights dim, having zero intensity
+     * </pre>
      */
     public void lightsOn(com.smartlight.smarthome.LightsStatus request,
         io.grpc.stub.StreamObserver<com.smartlight.smarthome.LightsStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getLightsOnMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void lightsOff(com.smartlight.smarthome.LightsStatus request,
-        io.grpc.stub.StreamObserver<com.smartlight.smarthome.LightsStatus> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getLightsOffMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -400,6 +290,14 @@ public final class SmartLightGrpc {
         io.grpc.stub.StreamObserver<com.smartlight.smarthome.IntensitySetting> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getDimintensityMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void nointensity(com.smartlight.smarthome.IntensitySetting request,
+        io.grpc.stub.StreamObserver<com.smartlight.smarthome.IntensitySetting> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getNointensityMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -422,31 +320,13 @@ public final class SmartLightGrpc {
     }
 
     /**
-     */
-    public com.smartlight.smarthome.SwitchStatus switchOn(com.smartlight.smarthome.SwitchStatus request) {
-      return blockingUnaryCall(
-          getChannel(), getSwitchOnMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.smartlight.smarthome.SwitchStatus switchOff(com.smartlight.smarthome.SwitchStatus request) {
-      return blockingUnaryCall(
-          getChannel(), getSwitchOffMethod(), getCallOptions(), request);
-    }
-
-    /**
+     * <pre>
+     *Fhour functions of the smart lights service. Turning lights on, making lights bright, making lights dim, having zero intensity
+     * </pre>
      */
     public com.smartlight.smarthome.LightsStatus lightsOn(com.smartlight.smarthome.LightsStatus request) {
       return blockingUnaryCall(
           getChannel(), getLightsOnMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.smartlight.smarthome.LightsStatus lightsOff(com.smartlight.smarthome.LightsStatus request) {
-      return blockingUnaryCall(
-          getChannel(), getLightsOffMethod(), getCallOptions(), request);
     }
 
     /**
@@ -463,6 +343,14 @@ public final class SmartLightGrpc {
         com.smartlight.smarthome.IntensitySetting request) {
       return blockingServerStreamingCall(
           getChannel(), getDimintensityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.smartlight.smarthome.IntensitySetting> nointensity(
+        com.smartlight.smarthome.IntensitySetting request) {
+      return blockingServerStreamingCall(
+          getChannel(), getNointensityMethod(), getCallOptions(), request);
     }
   }
 
@@ -485,44 +373,21 @@ public final class SmartLightGrpc {
     }
 
     /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartlight.smarthome.SwitchStatus> switchOn(
-        com.smartlight.smarthome.SwitchStatus request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartlight.smarthome.SwitchStatus> switchOff(
-        com.smartlight.smarthome.SwitchStatus request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request);
-    }
-
-    /**
+     * <pre>
+     *Fhour functions of the smart lights service. Turning lights on, making lights bright, making lights dim, having zero intensity
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.smartlight.smarthome.LightsStatus> lightsOn(
         com.smartlight.smarthome.LightsStatus request) {
       return futureUnaryCall(
           getChannel().newCall(getLightsOnMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartlight.smarthome.LightsStatus> lightsOff(
-        com.smartlight.smarthome.LightsStatus request) {
-      return futureUnaryCall(
-          getChannel().newCall(getLightsOffMethod(), getCallOptions()), request);
-    }
   }
 
-  private static final int METHODID_SWITCH_ON = 0;
-  private static final int METHODID_SWITCH_OFF = 1;
-  private static final int METHODID_LIGHTS_ON = 2;
-  private static final int METHODID_LIGHTS_OFF = 3;
-  private static final int METHODID_BRIGHTINTENSITY = 4;
-  private static final int METHODID_DIMINTENSITY = 5;
+  private static final int METHODID_LIGHTS_ON = 0;
+  private static final int METHODID_BRIGHTINTENSITY = 1;
+  private static final int METHODID_DIMINTENSITY = 2;
+  private static final int METHODID_NOINTENSITY = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -541,20 +406,8 @@ public final class SmartLightGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_SWITCH_ON:
-          serviceImpl.switchOn((com.smartlight.smarthome.SwitchStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartlight.smarthome.SwitchStatus>) responseObserver);
-          break;
-        case METHODID_SWITCH_OFF:
-          serviceImpl.switchOff((com.smartlight.smarthome.SwitchStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartlight.smarthome.SwitchStatus>) responseObserver);
-          break;
         case METHODID_LIGHTS_ON:
           serviceImpl.lightsOn((com.smartlight.smarthome.LightsStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartlight.smarthome.LightsStatus>) responseObserver);
-          break;
-        case METHODID_LIGHTS_OFF:
-          serviceImpl.lightsOff((com.smartlight.smarthome.LightsStatus) request,
               (io.grpc.stub.StreamObserver<com.smartlight.smarthome.LightsStatus>) responseObserver);
           break;
         case METHODID_BRIGHTINTENSITY:
@@ -563,6 +416,10 @@ public final class SmartLightGrpc {
           break;
         case METHODID_DIMINTENSITY:
           serviceImpl.dimintensity((com.smartlight.smarthome.IntensitySetting) request,
+              (io.grpc.stub.StreamObserver<com.smartlight.smarthome.IntensitySetting>) responseObserver);
+          break;
+        case METHODID_NOINTENSITY:
+          serviceImpl.nointensity((com.smartlight.smarthome.IntensitySetting) request,
               (io.grpc.stub.StreamObserver<com.smartlight.smarthome.IntensitySetting>) responseObserver);
           break;
         default:
@@ -626,12 +483,10 @@ public final class SmartLightGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SmartLightFileDescriptorSupplier())
-              .addMethod(getSwitchOnMethod())
-              .addMethod(getSwitchOffMethod())
               .addMethod(getLightsOnMethod())
-              .addMethod(getLightsOffMethod())
               .addMethod(getBrightintensityMethod())
               .addMethod(getDimintensityMethod())
+              .addMethod(getNointensityMethod())
               .build();
         }
       }

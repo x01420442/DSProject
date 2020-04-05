@@ -5,14 +5,13 @@ option java_package = "com.smartfire.smarthome";
 
 
 service SmartFire {
-    rpc switchOn(SwitchStatus) returns (SwitchStatus) {}
-    rpc switchOff(SwitchStatus) returns (SwitchStatus) {}
+//Three functions of the smart Fire service. Turning fire on, making it hotter, making it colder.
     rpc fireOn(FireStatus) returns (FireStatus) {}
-    rpc fireOff(FireStatus) returns (FireStatus) {}
     rpc makeHot(TempratureSetting) returns (stream TempratureSetting) {}
     rpc makeCold(TempratureSetting) returns (stream TempratureSetting) {}
 }
 
+//The request/response for the functions of the smart fire service
 message SwitchStatus{
   bool switchOnOff= 1;
 }

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.smartprinter.smarthome";
+
+
+service SmartPrinter {
+//Two functions of the smart printer service. Turning printer on, making printer print a report
+    rpc turnOn(PowerOn) returns (PowerOn) {}
+    rpc printReport(stream PrintReport) returns (stream PrintReport) {}    
+}
+//The request/response for the functions of the smart printer service
+message PowerOn{
+  bool powerOnOff= 1;
+}
+message PrintReport{
+  string report = 1;
+}

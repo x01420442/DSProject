@@ -4,6 +4,10 @@
 package com.smartfire.smarthome;
 
 /**
+ * <pre>
+ *The request/response for the functions of the smart fire service
+ * </pre>
+ *
  * Protobuf type {@code SwitchStatus}
  */
 public  final class SwitchStatus extends
@@ -247,6 +251,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *The request/response for the functions of the smart fire service
+   * </pre>
+   *
    * Protobuf type {@code SwitchStatus}
    */
   public static final class Builder extends

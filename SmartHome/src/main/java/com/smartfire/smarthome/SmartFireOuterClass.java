@@ -42,15 +42,12 @@ public final class SmartFireOuterClass {
       "tchOnOff\030\001 \001(\010\"2\n\nFireStatus\022\021\n\tfireOnOf" +
       "f\030\002 \001(\010\022\021\n\tstatusMsg\030\003 \001(\t\":\n\021Temprature" +
       "Setting\022\022\n\ntemprature\030\004 \001(\005\022\021\n\tstatusMsg" +
-      "\030\005 \001(\t2\240\002\n\tSmartFire\022*\n\010switchOn\022\r.Switc" +
-      "hStatus\032\r.SwitchStatus\"\000\022+\n\tswitchOff\022\r." +
-      "SwitchStatus\032\r.SwitchStatus\"\000\022$\n\006fireOn\022" +
-      "\013.FireStatus\032\013.FireStatus\"\000\022%\n\007fireOff\022\013" +
-      ".FireStatus\032\013.FireStatus\"\000\0225\n\007makeHot\022\022." +
-      "TempratureSetting\032\022.TempratureSetting\"\0000" +
-      "\001\0226\n\010makeCold\022\022.TempratureSetting\032\022.Temp" +
-      "ratureSetting\"\0000\001B\033\n\027com.smartfire.smart" +
-      "homeP\001b\006proto3"
+      "\030\005 \001(\t2\240\001\n\tSmartFire\022$\n\006fireOn\022\013.FireSta" +
+      "tus\032\013.FireStatus\"\000\0225\n\007makeHot\022\022.Tempratu" +
+      "reSetting\032\022.TempratureSetting\"\0000\001\0226\n\010mak" +
+      "eCold\022\022.TempratureSetting\032\022.TempratureSe" +
+      "tting\"\0000\001B\033\n\027com.smartfire.smarthomeP\001b\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

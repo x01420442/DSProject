@@ -27,70 +27,6 @@ public final class SmartFireGrpc {
   public static final String SERVICE_NAME = "SmartFire";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.smartfire.smarthome.SwitchStatus,
-      com.smartfire.smarthome.SwitchStatus> getSwitchOnMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "switchOn",
-      requestType = com.smartfire.smarthome.SwitchStatus.class,
-      responseType = com.smartfire.smarthome.SwitchStatus.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartfire.smarthome.SwitchStatus,
-      com.smartfire.smarthome.SwitchStatus> getSwitchOnMethod() {
-    io.grpc.MethodDescriptor<com.smartfire.smarthome.SwitchStatus, com.smartfire.smarthome.SwitchStatus> getSwitchOnMethod;
-    if ((getSwitchOnMethod = SmartFireGrpc.getSwitchOnMethod) == null) {
-      synchronized (SmartFireGrpc.class) {
-        if ((getSwitchOnMethod = SmartFireGrpc.getSwitchOnMethod) == null) {
-          SmartFireGrpc.getSwitchOnMethod = getSwitchOnMethod = 
-              io.grpc.MethodDescriptor.<com.smartfire.smarthome.SwitchStatus, com.smartfire.smarthome.SwitchStatus>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "SmartFire", "switchOn"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartfire.smarthome.SwitchStatus.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartfire.smarthome.SwitchStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartFireMethodDescriptorSupplier("switchOn"))
-                  .build();
-          }
-        }
-     }
-     return getSwitchOnMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.smartfire.smarthome.SwitchStatus,
-      com.smartfire.smarthome.SwitchStatus> getSwitchOffMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "switchOff",
-      requestType = com.smartfire.smarthome.SwitchStatus.class,
-      responseType = com.smartfire.smarthome.SwitchStatus.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartfire.smarthome.SwitchStatus,
-      com.smartfire.smarthome.SwitchStatus> getSwitchOffMethod() {
-    io.grpc.MethodDescriptor<com.smartfire.smarthome.SwitchStatus, com.smartfire.smarthome.SwitchStatus> getSwitchOffMethod;
-    if ((getSwitchOffMethod = SmartFireGrpc.getSwitchOffMethod) == null) {
-      synchronized (SmartFireGrpc.class) {
-        if ((getSwitchOffMethod = SmartFireGrpc.getSwitchOffMethod) == null) {
-          SmartFireGrpc.getSwitchOffMethod = getSwitchOffMethod = 
-              io.grpc.MethodDescriptor.<com.smartfire.smarthome.SwitchStatus, com.smartfire.smarthome.SwitchStatus>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "SmartFire", "switchOff"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartfire.smarthome.SwitchStatus.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartfire.smarthome.SwitchStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartFireMethodDescriptorSupplier("switchOff"))
-                  .build();
-          }
-        }
-     }
-     return getSwitchOffMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.smartfire.smarthome.FireStatus,
       com.smartfire.smarthome.FireStatus> getFireOnMethod;
 
@@ -121,38 +57,6 @@ public final class SmartFireGrpc {
         }
      }
      return getFireOnMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.smartfire.smarthome.FireStatus,
-      com.smartfire.smarthome.FireStatus> getFireOffMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "fireOff",
-      requestType = com.smartfire.smarthome.FireStatus.class,
-      responseType = com.smartfire.smarthome.FireStatus.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.smartfire.smarthome.FireStatus,
-      com.smartfire.smarthome.FireStatus> getFireOffMethod() {
-    io.grpc.MethodDescriptor<com.smartfire.smarthome.FireStatus, com.smartfire.smarthome.FireStatus> getFireOffMethod;
-    if ((getFireOffMethod = SmartFireGrpc.getFireOffMethod) == null) {
-      synchronized (SmartFireGrpc.class) {
-        if ((getFireOffMethod = SmartFireGrpc.getFireOffMethod) == null) {
-          SmartFireGrpc.getFireOffMethod = getFireOffMethod = 
-              io.grpc.MethodDescriptor.<com.smartfire.smarthome.FireStatus, com.smartfire.smarthome.FireStatus>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "SmartFire", "fireOff"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartfire.smarthome.FireStatus.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.smartfire.smarthome.FireStatus.getDefaultInstance()))
-                  .setSchemaDescriptor(new SmartFireMethodDescriptorSupplier("fireOff"))
-                  .build();
-          }
-        }
-     }
-     return getFireOffMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.smartfire.smarthome.TempratureSetting,
@@ -247,31 +151,13 @@ public final class SmartFireGrpc {
   public static abstract class SmartFireImplBase implements io.grpc.BindableService {
 
     /**
-     */
-    public void switchOn(com.smartfire.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartfire.smarthome.SwitchStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getSwitchOnMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void switchOff(com.smartfire.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartfire.smarthome.SwitchStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getSwitchOffMethod(), responseObserver);
-    }
-
-    /**
+     * <pre>
+     *Three functions of the smart Fire service. Turning fire on, making it hotter, making it colder.
+     * </pre>
      */
     public void fireOn(com.smartfire.smarthome.FireStatus request,
         io.grpc.stub.StreamObserver<com.smartfire.smarthome.FireStatus> responseObserver) {
       asyncUnimplementedUnaryCall(getFireOnMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void fireOff(com.smartfire.smarthome.FireStatus request,
-        io.grpc.stub.StreamObserver<com.smartfire.smarthome.FireStatus> responseObserver) {
-      asyncUnimplementedUnaryCall(getFireOffMethod(), responseObserver);
     }
 
     /**
@@ -291,33 +177,12 @@ public final class SmartFireGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getSwitchOnMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartfire.smarthome.SwitchStatus,
-                com.smartfire.smarthome.SwitchStatus>(
-                  this, METHODID_SWITCH_ON)))
-          .addMethod(
-            getSwitchOffMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartfire.smarthome.SwitchStatus,
-                com.smartfire.smarthome.SwitchStatus>(
-                  this, METHODID_SWITCH_OFF)))
-          .addMethod(
             getFireOnMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.smartfire.smarthome.FireStatus,
                 com.smartfire.smarthome.FireStatus>(
                   this, METHODID_FIRE_ON)))
-          .addMethod(
-            getFireOffMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.smartfire.smarthome.FireStatus,
-                com.smartfire.smarthome.FireStatus>(
-                  this, METHODID_FIRE_OFF)))
           .addMethod(
             getMakeHotMethod(),
             asyncServerStreamingCall(
@@ -355,35 +220,14 @@ public final class SmartFireGrpc {
     }
 
     /**
-     */
-    public void switchOn(com.smartfire.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartfire.smarthome.SwitchStatus> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void switchOff(com.smartfire.smarthome.SwitchStatus request,
-        io.grpc.stub.StreamObserver<com.smartfire.smarthome.SwitchStatus> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
+     * <pre>
+     *Three functions of the smart Fire service. Turning fire on, making it hotter, making it colder.
+     * </pre>
      */
     public void fireOn(com.smartfire.smarthome.FireStatus request,
         io.grpc.stub.StreamObserver<com.smartfire.smarthome.FireStatus> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getFireOnMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void fireOff(com.smartfire.smarthome.FireStatus request,
-        io.grpc.stub.StreamObserver<com.smartfire.smarthome.FireStatus> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getFireOffMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -422,31 +266,13 @@ public final class SmartFireGrpc {
     }
 
     /**
-     */
-    public com.smartfire.smarthome.SwitchStatus switchOn(com.smartfire.smarthome.SwitchStatus request) {
-      return blockingUnaryCall(
-          getChannel(), getSwitchOnMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.smartfire.smarthome.SwitchStatus switchOff(com.smartfire.smarthome.SwitchStatus request) {
-      return blockingUnaryCall(
-          getChannel(), getSwitchOffMethod(), getCallOptions(), request);
-    }
-
-    /**
+     * <pre>
+     *Three functions of the smart Fire service. Turning fire on, making it hotter, making it colder.
+     * </pre>
      */
     public com.smartfire.smarthome.FireStatus fireOn(com.smartfire.smarthome.FireStatus request) {
       return blockingUnaryCall(
           getChannel(), getFireOnMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.smartfire.smarthome.FireStatus fireOff(com.smartfire.smarthome.FireStatus request) {
-      return blockingUnaryCall(
-          getChannel(), getFireOffMethod(), getCallOptions(), request);
     }
 
     /**
@@ -485,44 +311,20 @@ public final class SmartFireGrpc {
     }
 
     /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartfire.smarthome.SwitchStatus> switchOn(
-        com.smartfire.smarthome.SwitchStatus request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSwitchOnMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartfire.smarthome.SwitchStatus> switchOff(
-        com.smartfire.smarthome.SwitchStatus request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSwitchOffMethod(), getCallOptions()), request);
-    }
-
-    /**
+     * <pre>
+     *Three functions of the smart Fire service. Turning fire on, making it hotter, making it colder.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.smartfire.smarthome.FireStatus> fireOn(
         com.smartfire.smarthome.FireStatus request) {
       return futureUnaryCall(
           getChannel().newCall(getFireOnMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.smartfire.smarthome.FireStatus> fireOff(
-        com.smartfire.smarthome.FireStatus request) {
-      return futureUnaryCall(
-          getChannel().newCall(getFireOffMethod(), getCallOptions()), request);
-    }
   }
 
-  private static final int METHODID_SWITCH_ON = 0;
-  private static final int METHODID_SWITCH_OFF = 1;
-  private static final int METHODID_FIRE_ON = 2;
-  private static final int METHODID_FIRE_OFF = 3;
-  private static final int METHODID_MAKE_HOT = 4;
-  private static final int METHODID_MAKE_COLD = 5;
+  private static final int METHODID_FIRE_ON = 0;
+  private static final int METHODID_MAKE_HOT = 1;
+  private static final int METHODID_MAKE_COLD = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -541,20 +343,8 @@ public final class SmartFireGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_SWITCH_ON:
-          serviceImpl.switchOn((com.smartfire.smarthome.SwitchStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartfire.smarthome.SwitchStatus>) responseObserver);
-          break;
-        case METHODID_SWITCH_OFF:
-          serviceImpl.switchOff((com.smartfire.smarthome.SwitchStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartfire.smarthome.SwitchStatus>) responseObserver);
-          break;
         case METHODID_FIRE_ON:
           serviceImpl.fireOn((com.smartfire.smarthome.FireStatus) request,
-              (io.grpc.stub.StreamObserver<com.smartfire.smarthome.FireStatus>) responseObserver);
-          break;
-        case METHODID_FIRE_OFF:
-          serviceImpl.fireOff((com.smartfire.smarthome.FireStatus) request,
               (io.grpc.stub.StreamObserver<com.smartfire.smarthome.FireStatus>) responseObserver);
           break;
         case METHODID_MAKE_HOT:
@@ -626,10 +416,7 @@ public final class SmartFireGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SmartFireFileDescriptorSupplier())
-              .addMethod(getSwitchOnMethod())
-              .addMethod(getSwitchOffMethod())
               .addMethod(getFireOnMethod())
-              .addMethod(getFireOffMethod())
               .addMethod(getMakeHotMethod())
               .addMethod(getMakeColdMethod())
               .build();

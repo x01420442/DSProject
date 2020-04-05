@@ -4,6 +4,10 @@
 package com.smartlight.smarthome;
 
 /**
+ * <pre>
+ *The request/response for the functions of the smart lights service
+ * </pre>
+ *
  * Protobuf type {@code LightsStatus}
  */
 public  final class LightsStatus extends
@@ -298,6 +302,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *The request/response for the functions of the smart lights service
+   * </pre>
+   *
    * Protobuf type {@code LightsStatus}
    */
   public static final class Builder extends
