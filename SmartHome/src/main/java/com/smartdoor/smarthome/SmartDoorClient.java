@@ -2,6 +2,7 @@ package com.smartdoor.smarthome;
 
 import com.google.protobuf.Empty;
 
+
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -26,10 +27,6 @@ public class SmartDoorClient {
     private ManagedChannel channel;
 
     
-    
-
-	
-
 	public static void main(String[] args) throws Exception {
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
 
@@ -39,9 +36,9 @@ public class SmartDoorClient {
 		futureStub =  SmartDoorGrpc.newFutureStub(channel);
 		
 		//openDoor();
-		//closeDoor();
+		closeDoor();
 		//unlockDoor();
-		lockDoor();
+		//lockDoor();
 		
 		  //reverse();
 		//  replace();
@@ -56,19 +53,24 @@ public class SmartDoorClient {
 	}
 	public static void openDoor(){
 		String statusMsg = "";
-        System.out.println("Opening the door...");
+        System.out.println("Accessing door controls");
         //startHeating();
         try {
-            DoorStatus request = DoorStatus.newBuilder().setOpenOnOff(false).build();
-            DoorStatus status = blockingStub.openDoor(request);
+        	
+        	
+        	DoorRequest request = DoorRequest.newBuilder().build();
+        	DoorResponse status = blockingStub.openDoor(request);
+        	
             if(status.getOpenOnOff()){
+            	statusMsg = "open";
+                System.out.println("The door is now: " + statusMsg);
+            }
+            else{                
                 statusMsg = "closed";
+                System.out.println("The door is now: " + statusMsg);
             }
-            else{
-                statusMsg = "open";
-            }
-            System.out.println("The door is now: " + statusMsg);
-            
+	      
+
         } catch (RuntimeException e) {
             logger.log(Level.WARNING, "RPC failed", e);
             return;
@@ -76,17 +78,24 @@ public class SmartDoorClient {
     }
 	public static void closeDoor() {
 		String statusMsg = "";
-        System.out.println("Closing the door...");
+        System.out.println("Accessing door controls");
+        //startHeating();
         try {
-        	DoorStatus request = DoorStatus.newBuilder().setOpenOnOff(false).build();
-            DoorStatus status = blockingStub.closeDoor(request);
+        	
+        	
+        	DoorRequest request = DoorRequest.newBuilder().build();
+        	DoorResponse status = blockingStub.closeDoor(request);
+        	
             if(status.getOpenOnOff()){
+            	statusMsg = "open";
+                System.out.println("The door is closed for locking");
+            }
+            else{                
                 statusMsg = "closed";
+                System.out.println("The door is already locked");
             }
-            else{
-                statusMsg = "open";
-            }
-            System.out.println("The door is now: " + statusMsg);
+	      
+
         } catch (RuntimeException e) {
             logger.log(Level.WARNING, "RPC failed", e);
             return;

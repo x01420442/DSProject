@@ -7,8 +7,8 @@ option java_package = "com.smartdoor.smarthome";
 service SmartDoor {
     rpc switchOn(SwitchStatus) returns (SwitchStatus) {}
     rpc switchOff(SwitchStatus) returns (SwitchStatus) {}
-    rpc openDoor(DoorStatus) returns (DoorStatus) {}
-    rpc closeDoor(DoorStatus) returns (DoorStatus) {}
+    rpc openDoor(DoorRequest) returns (DoorResponse) {}
+    rpc closeDoor(DoorRequest) returns (DoorResponse) {}
     rpc lockDoor(LockStatus) returns (LockStatus) {}
     rpc unlockDoor(LockStatus) returns (LockStatus) {}
 }
@@ -17,12 +17,16 @@ message SwitchStatus{
   bool switchOnOff= 1;
 }
 
-message DoorStatus{
-  bool openOnOff= 2;
-  string statusMsg = 3;
+message DoorRequest{
+  bool openOnOff= 1;
+  string statusMsg = 2;
+}
+message DoorResponse{
+  bool openOnOff= 1;
+  string statusMsg = 2;
 }
 
 message LockStatus{
-  bool lockOnOff= 4;
-  string statusMsg = 5;
+  bool lockOnOff= 1;
+  string statusMsg = 2;
 }

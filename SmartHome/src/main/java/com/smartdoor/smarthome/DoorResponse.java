@@ -4,19 +4,19 @@
 package com.smartdoor.smarthome;
 
 /**
- * Protobuf type {@code LockStatus}
+ * Protobuf type {@code DoorResponse}
  */
-public  final class LockStatus extends
+public  final class DoorResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:LockStatus)
-    LockStatusOrBuilder {
+    // @@protoc_insertion_point(message_implements:DoorResponse)
+    DoorResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use LockStatus.newBuilder() to construct.
-  private LockStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use DoorResponse.newBuilder() to construct.
+  private DoorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private LockStatus() {
-    lockOnOff_ = false;
+  private DoorResponse() {
+    openOnOff_ = false;
     statusMsg_ = "";
   }
 
@@ -25,7 +25,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private LockStatus(
+  private DoorResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            lockOnOff_ = input.readBool();
+            openOnOff_ = input.readBool();
             break;
           }
           case 18: {
@@ -76,24 +76,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_LockStatus_descriptor;
+    return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_DoorResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_LockStatus_fieldAccessorTable
+    return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_DoorResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.smartdoor.smarthome.LockStatus.class, com.smartdoor.smarthome.LockStatus.Builder.class);
+            com.smartdoor.smarthome.DoorResponse.class, com.smartdoor.smarthome.DoorResponse.Builder.class);
   }
 
-  public static final int LOCKONOFF_FIELD_NUMBER = 1;
-  private boolean lockOnOff_;
+  public static final int OPENONOFF_FIELD_NUMBER = 1;
+  private boolean openOnOff_;
   /**
-   * <code>bool lockOnOff = 1;</code>
+   * <code>bool openOnOff = 1;</code>
    */
-  public boolean getLockOnOff() {
-    return lockOnOff_;
+  public boolean getOpenOnOff() {
+    return openOnOff_;
   }
 
   public static final int STATUSMSG_FIELD_NUMBER = 2;
@@ -144,8 +144,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (lockOnOff_ != false) {
-      output.writeBool(1, lockOnOff_);
+    if (openOnOff_ != false) {
+      output.writeBool(1, openOnOff_);
     }
     if (!getStatusMsgBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, statusMsg_);
@@ -159,9 +159,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (lockOnOff_ != false) {
+    if (openOnOff_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, lockOnOff_);
+        .computeBoolSize(1, openOnOff_);
     }
     if (!getStatusMsgBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, statusMsg_);
@@ -176,14 +176,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.smartdoor.smarthome.LockStatus)) {
+    if (!(obj instanceof com.smartdoor.smarthome.DoorResponse)) {
       return super.equals(obj);
     }
-    com.smartdoor.smarthome.LockStatus other = (com.smartdoor.smarthome.LockStatus) obj;
+    com.smartdoor.smarthome.DoorResponse other = (com.smartdoor.smarthome.DoorResponse) obj;
 
     boolean result = true;
-    result = result && (getLockOnOff()
-        == other.getLockOnOff());
+    result = result && (getOpenOnOff()
+        == other.getOpenOnOff());
     result = result && getStatusMsg()
         .equals(other.getStatusMsg());
     result = result && unknownFields.equals(other.unknownFields);
@@ -197,9 +197,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + LOCKONOFF_FIELD_NUMBER;
+    hash = (37 * hash) + OPENONOFF_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getLockOnOff());
+        getOpenOnOff());
     hash = (37 * hash) + STATUSMSG_FIELD_NUMBER;
     hash = (53 * hash) + getStatusMsg().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -207,69 +207,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.smartdoor.smarthome.LockStatus parseFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(byte[] data)
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(java.io.InputStream input)
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.smartdoor.smarthome.LockStatus parseDelimitedFrom(java.io.InputStream input)
+  public static com.smartdoor.smarthome.DoorResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.smartdoor.smarthome.LockStatus parseDelimitedFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.smartdoor.smarthome.LockStatus parseFrom(
+  public static com.smartdoor.smarthome.DoorResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.smartdoor.smarthome.LockStatus prototype) {
+  public static Builder newBuilder(com.smartdoor.smarthome.DoorResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -298,26 +298,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code LockStatus}
+   * Protobuf type {@code DoorResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:LockStatus)
-      com.smartdoor.smarthome.LockStatusOrBuilder {
+      // @@protoc_insertion_point(builder_implements:DoorResponse)
+      com.smartdoor.smarthome.DoorResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_LockStatus_descriptor;
+      return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_DoorResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_LockStatus_fieldAccessorTable
+      return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_DoorResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.smartdoor.smarthome.LockStatus.class, com.smartdoor.smarthome.LockStatus.Builder.class);
+              com.smartdoor.smarthome.DoorResponse.class, com.smartdoor.smarthome.DoorResponse.Builder.class);
     }
 
-    // Construct using com.smartdoor.smarthome.LockStatus.newBuilder()
+    // Construct using com.smartdoor.smarthome.DoorResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -335,7 +335,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      lockOnOff_ = false;
+      openOnOff_ = false;
 
       statusMsg_ = "";
 
@@ -345,17 +345,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_LockStatus_descriptor;
+      return com.smartdoor.smarthome.SmartDoorOuterClass.internal_static_DoorResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.smartdoor.smarthome.LockStatus getDefaultInstanceForType() {
-      return com.smartdoor.smarthome.LockStatus.getDefaultInstance();
+    public com.smartdoor.smarthome.DoorResponse getDefaultInstanceForType() {
+      return com.smartdoor.smarthome.DoorResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.smartdoor.smarthome.LockStatus build() {
-      com.smartdoor.smarthome.LockStatus result = buildPartial();
+    public com.smartdoor.smarthome.DoorResponse build() {
+      com.smartdoor.smarthome.DoorResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -363,9 +363,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.smartdoor.smarthome.LockStatus buildPartial() {
-      com.smartdoor.smarthome.LockStatus result = new com.smartdoor.smarthome.LockStatus(this);
-      result.lockOnOff_ = lockOnOff_;
+    public com.smartdoor.smarthome.DoorResponse buildPartial() {
+      com.smartdoor.smarthome.DoorResponse result = new com.smartdoor.smarthome.DoorResponse(this);
+      result.openOnOff_ = openOnOff_;
       result.statusMsg_ = statusMsg_;
       onBuilt();
       return result;
@@ -405,18 +405,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.smartdoor.smarthome.LockStatus) {
-        return mergeFrom((com.smartdoor.smarthome.LockStatus)other);
+      if (other instanceof com.smartdoor.smarthome.DoorResponse) {
+        return mergeFrom((com.smartdoor.smarthome.DoorResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.smartdoor.smarthome.LockStatus other) {
-      if (other == com.smartdoor.smarthome.LockStatus.getDefaultInstance()) return this;
-      if (other.getLockOnOff() != false) {
-        setLockOnOff(other.getLockOnOff());
+    public Builder mergeFrom(com.smartdoor.smarthome.DoorResponse other) {
+      if (other == com.smartdoor.smarthome.DoorResponse.getDefaultInstance()) return this;
+      if (other.getOpenOnOff() != false) {
+        setOpenOnOff(other.getOpenOnOff());
       }
       if (!other.getStatusMsg().isEmpty()) {
         statusMsg_ = other.statusMsg_;
@@ -437,11 +437,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.smartdoor.smarthome.LockStatus parsedMessage = null;
+      com.smartdoor.smarthome.DoorResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.smartdoor.smarthome.LockStatus) e.getUnfinishedMessage();
+        parsedMessage = (com.smartdoor.smarthome.DoorResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -451,28 +451,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean lockOnOff_ ;
+    private boolean openOnOff_ ;
     /**
-     * <code>bool lockOnOff = 1;</code>
+     * <code>bool openOnOff = 1;</code>
      */
-    public boolean getLockOnOff() {
-      return lockOnOff_;
+    public boolean getOpenOnOff() {
+      return openOnOff_;
     }
     /**
-     * <code>bool lockOnOff = 1;</code>
+     * <code>bool openOnOff = 1;</code>
      */
-    public Builder setLockOnOff(boolean value) {
+    public Builder setOpenOnOff(boolean value) {
       
-      lockOnOff_ = value;
+      openOnOff_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool lockOnOff = 1;</code>
+     * <code>bool openOnOff = 1;</code>
      */
-    public Builder clearLockOnOff() {
+    public Builder clearOpenOnOff() {
       
-      lockOnOff_ = false;
+      openOnOff_ = false;
       onChanged();
       return this;
     }
@@ -558,41 +558,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:LockStatus)
+    // @@protoc_insertion_point(builder_scope:DoorResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:LockStatus)
-  private static final com.smartdoor.smarthome.LockStatus DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:DoorResponse)
+  private static final com.smartdoor.smarthome.DoorResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.smartdoor.smarthome.LockStatus();
+    DEFAULT_INSTANCE = new com.smartdoor.smarthome.DoorResponse();
   }
 
-  public static com.smartdoor.smarthome.LockStatus getDefaultInstance() {
+  public static com.smartdoor.smarthome.DoorResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LockStatus>
-      PARSER = new com.google.protobuf.AbstractParser<LockStatus>() {
+  private static final com.google.protobuf.Parser<DoorResponse>
+      PARSER = new com.google.protobuf.AbstractParser<DoorResponse>() {
     @java.lang.Override
-    public LockStatus parsePartialFrom(
+    public DoorResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LockStatus(input, extensionRegistry);
+      return new DoorResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<LockStatus> parser() {
+  public static com.google.protobuf.Parser<DoorResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<LockStatus> getParserForType() {
+  public com.google.protobuf.Parser<DoorResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.smartdoor.smarthome.LockStatus getDefaultInstanceForType() {
+  public com.smartdoor.smarthome.DoorResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

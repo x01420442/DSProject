@@ -3,14 +3,14 @@
 
 package com.smartdoor.smarthome;
 
-public interface LockStatusOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:LockStatus)
+public interface DoorRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:DoorRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>bool lockOnOff = 1;</code>
+   * <code>bool openOnOff = 1;</code>
    */
-  boolean getLockOnOff();
+  boolean getOpenOnOff();
 
   /**
    * <code>string statusMsg = 2;</code>

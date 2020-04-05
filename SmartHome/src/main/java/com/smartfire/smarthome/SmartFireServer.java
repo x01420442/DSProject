@@ -11,7 +11,7 @@ import io.grpc.ServerBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
-import com.smartdoor.smarthome.DoorStatus;
+
 import com.smartdoor.smarthome.SmartDoorGrpc;
 import com.smartdoor.smarthome.SmartDoorServer;
 import com.smartfire.smarthome.SmartFireGrpc.SmartFireImplBase;

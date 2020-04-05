@@ -32,46 +32,57 @@ public class SmartDoorServer extends SmartDoorImplBase {
 		server.awaitTermination();
 	}
 	
-	private class DoorImplementation extends SmartDoorGrpc.SmartDoorImplBase {
+	//private class DoorImplementation extends SmartDoorGrpc.SmartDoorImplBase {
 	        
-	        private boolean door_status = false;
-	        private boolean lock_status = false;
-	          
+	        //private boolean door_status = false;
+	        //private boolean lock_status = false;
+	    boolean door = false;      
 	    
 		@Override
-	    public void openDoor(DoorStatus request,
-	        io.grpc.stub.StreamObserver<DoorStatus> response) {
-	    
-	
-			door_status = true;
-			String output = "The door is now opened.";   
+	    public void openDoor(DoorRequest request,
+	        io.grpc.stub.StreamObserver<DoorResponse> response) {
+						
+			 //door = request.getOpenOnOff();
+			door = !door;
 			
-			DoorStatus Door_Status = DoorStatus.newBuilder().setStatusMsg(output).setOpenOnOff(door_status).build();
+			if (door) {
+	        	System.out.println("Opening the door...");
+	        }
+	        else {
+	        	System.out.println("Closing the door...");
+	        }
+
+			
+			DoorResponse Door_Status = DoorResponse.newBuilder().setOpenOnOff(door).build();
 	        response.onNext(Door_Status);
 	        response.onCompleted();
-					
+	        
 	    }
 	
 	    @Override
-	    public void closeDoor(DoorStatus request,
-	        io.grpc.stub.StreamObserver<DoorStatus> response) {
-	    	door_status = false; 
-	    	String output = "The door is now closed.";   
-			
-			DoorStatus Door_Status = DoorStatus.newBuilder().setStatusMsg(output).setOpenOnOff(door_status).build();
-	        response.onNext(Door_Status);
-	        response.onCompleted();
-	    }
+	    public void closeDoor(DoorRequest request,
+		        io.grpc.stub.StreamObserver<DoorResponse> response) {
+							
+				boolean door = request.getOpenOnOff();
+
+		        System.out.println("Checking if door is closed for locking.");
+
+ 				
+				DoorResponse Door_Status = DoorResponse.newBuilder().setOpenOnOff(door).build();
+		        response.onNext(Door_Status);
+		        response.onCompleted();
+		        
+		    }
 	    @Override
 	    
 	    public void unlockDoor(LockStatus request,
 	        io.grpc.stub.StreamObserver<LockStatus> response) {
-	    
+	    	boolean fire = true;
 	
-	    	lock_status = true;
+	    	//lock_status = true;
 			String output = "The door is now unlocked.";   
 			
-			LockStatus lock_Status = LockStatus.newBuilder().setStatusMsg(output).setLockOnOff(lock_status).build();
+			LockStatus lock_Status = LockStatus.newBuilder().setStatusMsg(output).setLockOnOff(fire).build();
 	        response.onNext(lock_Status);
 	        response.onCompleted();
 					
@@ -80,13 +91,14 @@ public class SmartDoorServer extends SmartDoorImplBase {
 	    @Override
 	    public void lockDoor(LockStatus request,
 	        io.grpc.stub.StreamObserver<LockStatus> response) {
-	    	lock_status = false; 
+	    	//lock_status = false;
+	    	boolean fire = false;
 	    	String output = "The door is now locked.";   
 			
-	    	LockStatus lock_Status = LockStatus.newBuilder().setStatusMsg(output).setLockOnOff(lock_status).build();
+	    	LockStatus lock_Status = LockStatus.newBuilder().setStatusMsg(output).setLockOnOff(fire).build();
 	        response.onNext(lock_Status);
 	        response.onCompleted();
 	    }
-	}
+	//}
 
 }

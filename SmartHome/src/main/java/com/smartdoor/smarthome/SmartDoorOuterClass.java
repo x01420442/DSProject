@@ -20,10 +20,15 @@ public final class SmartDoorOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SwitchStatus_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DoorStatus_descriptor;
+    internal_static_DoorRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DoorStatus_fieldAccessorTable;
+      internal_static_DoorRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DoorResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DoorResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_LockStatus_descriptor;
   static final 
@@ -39,17 +44,19 @@ public final class SmartDoorOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\017smartDoor.proto\"#\n\014SwitchStatus\022\023\n\013swi" +
-      "tchOnOff\030\001 \001(\010\"2\n\nDoorStatus\022\021\n\topenOnOf" +
-      "f\030\002 \001(\010\022\021\n\tstatusMsg\030\003 \001(\t\"2\n\nLockStatus" +
-      "\022\021\n\tlockOnOff\030\004 \001(\010\022\021\n\tstatusMsg\030\005 \001(\t2\207" +
-      "\002\n\tSmartDoor\022*\n\010switchOn\022\r.SwitchStatus\032" +
-      "\r.SwitchStatus\"\000\022+\n\tswitchOff\022\r.SwitchSt" +
-      "atus\032\r.SwitchStatus\"\000\022&\n\010openDoor\022\013.Door" +
-      "Status\032\013.DoorStatus\"\000\022\'\n\tcloseDoor\022\013.Doo" +
-      "rStatus\032\013.DoorStatus\"\000\022&\n\010lockDoor\022\013.Loc" +
-      "kStatus\032\013.LockStatus\"\000\022(\n\nunlockDoor\022\013.L" +
-      "ockStatus\032\013.LockStatus\"\000B\033\n\027com.smartdoo" +
-      "r.smarthomeP\001b\006proto3"
+      "tchOnOff\030\001 \001(\010\"3\n\013DoorRequest\022\021\n\topenOnO" +
+      "ff\030\001 \001(\010\022\021\n\tstatusMsg\030\002 \001(\t\"4\n\014DoorRespo" +
+      "nse\022\021\n\topenOnOff\030\001 \001(\010\022\021\n\tstatusMsg\030\002 \001(" +
+      "\t\"2\n\nLockStatus\022\021\n\tlockOnOff\030\001 \001(\010\022\021\n\tst" +
+      "atusMsg\030\002 \001(\t2\215\002\n\tSmartDoor\022*\n\010switchOn\022" +
+      "\r.SwitchStatus\032\r.SwitchStatus\"\000\022+\n\tswitc" +
+      "hOff\022\r.SwitchStatus\032\r.SwitchStatus\"\000\022)\n\010" +
+      "openDoor\022\014.DoorRequest\032\r.DoorResponse\"\000\022" +
+      "*\n\tcloseDoor\022\014.DoorRequest\032\r.DoorRespons" +
+      "e\"\000\022&\n\010lockDoor\022\013.LockStatus\032\013.LockStatu" +
+      "s\"\000\022(\n\nunlockDoor\022\013.LockStatus\032\013.LockSta" +
+      "tus\"\000B\033\n\027com.smartdoor.smarthomeP\001b\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -69,14 +76,20 @@ public final class SmartDoorOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SwitchStatus_descriptor,
         new java.lang.String[] { "SwitchOnOff", });
-    internal_static_DoorStatus_descriptor =
+    internal_static_DoorRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_DoorStatus_fieldAccessorTable = new
+    internal_static_DoorRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DoorStatus_descriptor,
+        internal_static_DoorRequest_descriptor,
+        new java.lang.String[] { "OpenOnOff", "StatusMsg", });
+    internal_static_DoorResponse_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_DoorResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DoorResponse_descriptor,
         new java.lang.String[] { "OpenOnOff", "StatusMsg", });
     internal_static_LockStatus_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_LockStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LockStatus_descriptor,
