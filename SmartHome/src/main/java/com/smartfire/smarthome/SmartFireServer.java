@@ -11,7 +11,6 @@ import io.grpc.ServerBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
-
 import com.smartdoor.smarthome.SmartDoorGrpc;
 import com.smartdoor.smarthome.SmartDoorServer;
 import com.smartfire.smarthome.SmartFireGrpc.SmartFireImplBase;
@@ -37,46 +36,43 @@ private static final Logger logger = Logger.getLogger(SmartFireServer.class.getN
 	
 		server.awaitTermination();
 }
-	private class FireImplementation extends SmartFireGrpc.SmartFireImplBase {
+	//private class FireImplementation extends SmartFireGrpc.SmartFireImplBase {
 		private int fire_temperature = 0;
-        private boolean fire_status = false;
+         boolean fire = false;
         
         @Override
         public void fireOn(FireStatus request,
             io.grpc.stub.StreamObserver<FireStatus> response) {
         
 
-    		fire_status = true;
-    		String output = "The fire is now lit.";   
+    		fire = !fire;
     		
-    		FireStatus fire_status1 = FireStatus.newBuilder().setStatusMsg(output).setFireOnOff(fire_status).build();
+    		if (fire) {
+	        	System.out.println("Lighting the fire.");
+	        }
+	        else {
+	        	System.out.println("Unighting the fire is unlit");
+	        } 
+    		
+    		FireStatus fire_status1 = FireStatus.newBuilder().setFireOnOff(fire).build();
     		
             response.onNext(fire_status1);
             response.onCompleted();
     				
         }
 
-        @Override
-        public void fireOff(FireStatus request,
-            io.grpc.stub.StreamObserver<FireStatus> response) {
-        	fire_status = false; 
-        	String output = "The fire is now off.";   
-    		
-        	FireStatus fire_status1 = FireStatus.newBuilder().setStatusMsg(output).setFireOnOff(fire_status).build();
-            response.onNext(fire_status1);
-            response.onCompleted();
-        }
+ 
         
         @Override
         public void makeHot(TempratureSetting request,
                 io.grpc.stub.StreamObserver<TempratureSetting> responseObserver) 
         {
             Timer t = new Timer();
-            t.schedule(new WarmUp(responseObserver), 0, 2000);
+            t.schedule(new WarmUp(responseObserver), 0, 1000);
         }
         
         class WarmUp extends TimerTask {
-
+        	private int fire_temperature = 0;
             StreamObserver<TempratureSetting> streamObserver;
 
             public WarmUp(StreamObserver<TempratureSetting> status) {
@@ -84,9 +80,10 @@ private static final Logger logger = Logger.getLogger(SmartFireServer.class.getN
             }
             
             @Override
+            
             public void run() {
                 if (fire_temperature < 80) {
-                	fire_temperature += 15;
+                	fire_temperature += 10;
                 	TempratureSetting fire_temperature1 = TempratureSetting.newBuilder().setTemprature(fire_temperature).build();
                     streamObserver.onNext(fire_temperature1);
                 } else {
@@ -102,14 +99,14 @@ private static final Logger logger = Logger.getLogger(SmartFireServer.class.getN
         public void makeCold(TempratureSetting request,
                 io.grpc.stub.StreamObserver<TempratureSetting> responseObserver) {
             Timer t = new Timer();
-            t.schedule(new reduceHeat(responseObserver), 0, 2000);
+            t.schedule(new coolDown(responseObserver), 0, 1000);
         }
         
-        class reduceHeat extends TimerTask {
-
+        class coolDown extends TimerTask {
+        	private int fire_temperature = 80;
             StreamObserver<TempratureSetting> streamObserver;
 
-            public reduceHeat(StreamObserver<TempratureSetting> status) {
+            public coolDown(StreamObserver<TempratureSetting> status) {
                 streamObserver = status;
             }
             
@@ -120,7 +117,7 @@ private static final Logger logger = Logger.getLogger(SmartFireServer.class.getN
                     TempratureSetting fire_status1 = TempratureSetting.newBuilder().setTemprature(fire_temperature).build();
                     streamObserver.onNext(fire_status1);
                 } else {
-                	TempratureSetting fire_status2 = TempratureSetting.newBuilder().setStatusMsg("Cooldown completed! The cooker is at 0% temperature.").setTemprature(fire_temperature).build();
+                	TempratureSetting fire_status2 = TempratureSetting.newBuilder().setStatusMsg("The fire has cooled down.").setTemprature(fire_temperature).build();
                     streamObserver.onNext(fire_status2);
                     streamObserver.onCompleted();
                     this.cancel();
@@ -130,7 +127,7 @@ private static final Logger logger = Logger.getLogger(SmartFireServer.class.getN
 
         
         
-	}
+	//}
 
 	
 }
