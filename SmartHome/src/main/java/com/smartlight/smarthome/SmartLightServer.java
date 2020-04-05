@@ -13,7 +13,6 @@ import io.grpc.ServerBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
-import com.smartdoor.smarthome.DoorStatus;
 import com.smartdoor.smarthome.SmartDoorGrpc;
 import com.smartdoor.smarthome.SmartDoorServer;
 import com.smartfire.smarthome.FireStatus;
@@ -43,34 +42,29 @@ public class SmartLightServer extends SmartLightImplBase {
 		
 			server.awaitTermination();
 	}
-		private class LightImplementation extends SmartLightGrpc.SmartLightImplBase {
+
 			private int light_intensity = 0;
-	        private boolean light_status = false;
+	        boolean light = false;
 	        
 	        @Override
 	        public void lightsOn(LightsStatus request,
 	            io.grpc.stub.StreamObserver<LightsStatus> response) {
-	        	light_intensity = 60;
 
-	        	light_status = true;
-	    		String output = "The lights are now on.";   
+	        	light = !light;
+	        	
+	        	if (light) {
+		        	System.out.println("Turning lights on.");
+		        }
+		        else {
+		        	System.out.println("Turning lights off.");
+		        }  
 	    		
-	    		LightsStatus light_status1 = LightsStatus.newBuilder().setStatusMsg(output).setLightsOnOff(light_status).build();
+	    		LightsStatus light_status1 = LightsStatus.newBuilder().setLightsOnOff(light).build();
 	    		
 	            response.onNext(light_status1);
 	            response.onCompleted();
+	            
 	    				
-	        }
-	        @Override
-	        public void lightsOff(LightsStatus request,
-	            io.grpc.stub.StreamObserver<LightsStatus> response) {
-	        	light_intensity = 0;
-	        	light_status = false; 
-	        	String output = "The lights are now off.";   
-	    		
-	        	LightsStatus light_status1 = LightsStatus.newBuilder().setStatusMsg(output).setLightsOnOff(light_status).build();
-	            response.onNext(light_status1);
-	            response.onCompleted();
 	        }
 	        
 	        @Override
@@ -78,11 +72,11 @@ public class SmartLightServer extends SmartLightImplBase {
 	                io.grpc.stub.StreamObserver<IntensitySetting> responseObserver) 
 	        {
 	            Timer t = new Timer();
-	            t.schedule(new LightUp(responseObserver), 0, 2000);
+	            t.schedule(new LightUp(responseObserver), 0, 1000);
 	        }
 	        
 	        class LightUp extends TimerTask {
-
+	        	
 	            StreamObserver<IntensitySetting> streamObserver;
 
 	            public LightUp(StreamObserver<IntensitySetting> status) {
@@ -107,10 +101,11 @@ public class SmartLightServer extends SmartLightImplBase {
 	        public void dimintensity(IntensitySetting request,
 	                io.grpc.stub.StreamObserver<IntensitySetting> responseObserver) {
 	            Timer t = new Timer();
-	            t.schedule(new lowerLight(responseObserver), 0, 2000);
+	            t.schedule(new lowerLight(responseObserver), 0, 100);
 	        }
 	        
 	        class lowerLight extends TimerTask {
+	        	int startIntensity = light_intensity;
 
 	            StreamObserver<IntensitySetting> streamObserver;
 
@@ -120,17 +115,33 @@ public class SmartLightServer extends SmartLightImplBase {
 	            
 	            @Override
 	            public void run() {
-	                if (light_intensity > 40) {
-	                	light_intensity -= 10;
-	                	IntensitySetting light_status1 = IntensitySetting.newBuilder().setIntensity(light_intensity).build();
-	                    streamObserver.onNext(light_status1);
-	                } else {
-	                	IntensitySetting light_status1 = IntensitySetting.newBuilder().setStatusMsg("The lights are now dimmed.").setIntensity(light_intensity).build();
-	                    streamObserver.onNext(light_status1);
-	                    streamObserver.onCompleted();
-	                    this.cancel();
-	                }
+	            	
+	            	if (startIntensity >= 0 && startIntensity < 39 ) {
+	            		if (light_intensity < 40) {
+	            			light_intensity += 1;
+	            			IntensitySetting status = IntensitySetting.newBuilder().setIntensity(light_intensity).build();
+	                        streamObserver.onNext(status);
+	                    } else {
+	                    	IntensitySetting status = IntensitySetting.newBuilder().setStatusMsg("The lights have gotten a little brighter").setIntensity(light_intensity).build();
+	                        streamObserver.onNext(status);
+	                        streamObserver.onCompleted();
+	                        this.cancel();
+	                    }
+	            		
+	            	}else if(startIntensity > 40) {
+	            		if (light_intensity > 40) {
+	            			light_intensity -= 1;
+	            			IntensitySetting status = IntensitySetting.newBuilder().setIntensity(light_intensity).build();
+	                        streamObserver.onNext(status);
+	                    } else {
+	                    	IntensitySetting status = IntensitySetting.newBuilder().setStatusMsg("The lights have gotten a little dimmer").setIntensity(light_intensity).build();
+	                        streamObserver.onNext(status);
+	                        streamObserver.onCompleted();
+	                        this.cancel();
+	                    }
+	            	}
+	            		            
 	            }
 	        }
-		}
+	
 }
